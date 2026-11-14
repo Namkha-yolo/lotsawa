@@ -1,0 +1,3185 @@
+{
+  "homophone_suite": {
+    "freq_only": {
+      "label": "freq_only",
+      "n_cases": 46,
+      "top1_acc": 0.2608695652173913,
+      "top5_acc": 0.5434782608695652,
+      "details": [
+        {
+          "phonetic": "chu",
+          "context": [
+            "དགུ"
+          ],
+          "expected": "བཅུ",
+          "description": "9 → 10 (counting sequence)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "བརྒྱད"
+          ],
+          "expected": "བཅུ",
+          "description": "8 → should expect 10 in counting ctx (weak)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "ཐུང"
+          ],
+          "expected": "ཆུ",
+          "description": "drink → water",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "འཐུང"
+          ],
+          "expected": "ཆུ",
+          "description": "drink (honorific) → water",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "རྒྱ"
+          ],
+          "expected": "ཆུ",
+          "description": "ocean context (rgya mtsho)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "མིག"
+          ],
+          "expected": "ཆུ",
+          "description": "eye → tears (mig chu)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "ཁ"
+          ],
+          "expected": "ཆུ",
+          "description": "mouth → saliva (kha chu)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "བཞི"
+          ],
+          "expected": "ལྔ",
+          "description": "4 → 5 (counting)",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "མངའ",
+            "ང",
+            "རྔ",
+            "སྔ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "ཡིན"
+          ],
+          "expected": "ང",
+          "description": "copula → I (nga yin)",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "མངའ",
+            "ང",
+            "རྔ",
+            "སྔ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "རེད"
+          ],
+          "expected": "ང",
+          "description": "factual → I",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "མངའ",
+            "ང",
+            "རྔ",
+            "སྔ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "བྱེད"
+          ],
+          "expected": "ང",
+          "description": "do → I",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "མངའ",
+            "ང",
+            "རྔ",
+            "སྔ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dak",
+          "context": [
+            "བདག"
+          ],
+          "expected": "བདག",
+          "description": "self doubled (dak dak)",
+          "top1": "བདག",
+          "top5": [
+            "བདག",
+            "དག",
+            "བཞིན",
+            "ལུས",
+            "མཐའ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dak",
+          "context": [
+            "རིག"
+          ],
+          "expected": "བདག",
+          "description": "awareness → self (rigpé dak)",
+          "top1": "བདག",
+          "top5": [
+            "བདག",
+            "དག",
+            "བཞིན",
+            "ལུས",
+            "མཐའ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dak",
+          "context": [
+            "སེམས"
+          ],
+          "expected": "བདག",
+          "description": "mind → self",
+          "top1": "བདག",
+          "top5": [
+            "བདག",
+            "དག",
+            "བཞིན",
+            "ལུས",
+            "མཐའ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dag",
+          "context": [
+            "སྣང"
+          ],
+          "expected": "དག",
+          "description": "pure vision (nangdak)",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "druk",
+          "context": [
+            "ལྔ"
+          ],
+          "expected": "དྲུག",
+          "description": "5 → 6",
+          "top1": "དྲུག",
+          "top5": [
+            "དྲུག",
+            "ནང",
+            "འཁྲུགས",
+            "འབྲུག",
+            "འཁྲུག"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "druk",
+          "context": [
+            "ལྷོ"
+          ],
+          "expected": "འབྲུག",
+          "description": "south → Bhutan",
+          "top1": "དྲུག",
+          "top5": [
+            "དྲུག",
+            "ནང",
+            "འཁྲུགས",
+            "འབྲུག",
+            "འཁྲུག"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "druk",
+          "context": [
+            "རྒྱལ"
+          ],
+          "expected": "འབྲུག",
+          "description": "royal → Bhutan (drukyul)",
+          "top1": "དྲུག",
+          "top5": [
+            "དྲུག",
+            "ནང",
+            "འཁྲུགས",
+            "འབྲུག",
+            "འཁྲུག"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "སངས"
+          ],
+          "expected": "ཆོས",
+          "description": "Buddha → dharma (sangye choe)",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "རྒྱས"
+          ],
+          "expected": "ཆོས",
+          "description": "expand → dharma",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "བླ"
+          ],
+          "expected": "ཆོས",
+          "description": "lama → dharma",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "ཡིན"
+          ],
+          "expected": "ཁྱོད",
+          "description": "is → you",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "བྱེད"
+          ],
+          "expected": "ཁྱོད",
+          "description": "do → you",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "ཡོད"
+          ],
+          "expected": "མེད",
+          "description": "yöd → med (have/not-have)",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "ཤེས"
+          ],
+          "expected": "མེད",
+          "description": "know → not-know",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "འབར"
+          ],
+          "expected": "མེ",
+          "description": "burn → fire",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "སྲེག"
+          ],
+          "expected": "མེ",
+          "description": "burn → fire",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "རིན"
+          ],
+          "expected": "རྗེ",
+          "description": "precious → lord (rinpoche je)",
+          "top1": "འབྱེད",
+          "top5": [
+            "འབྱེད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "བླ"
+          ],
+          "expected": "རྗེ",
+          "description": "lama → lord",
+          "top1": "འབྱེད",
+          "top5": [
+            "འབྱེད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "ལས"
+          ],
+          "expected": "བྱེད",
+          "description": "action → do",
+          "top1": "འབྱེད",
+          "top5": [
+            "འབྱེད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "འགྲུབ"
+          ],
+          "expected": "བྱེད",
+          "description": "accomplish → do",
+          "top1": "འབྱེད",
+          "top5": [
+            "འབྱེད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "che",
+          "context": [
+            "ཐུགས"
+          ],
+          "expected": "ཆེ",
+          "description": "mind → great (thukjechhe)",
+          "top1": "ཆེ",
+          "top5": [
+            "ཆེ",
+            "མཆེད",
+            "ཆེའོ",
+            "གཅད"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "che",
+          "context": [
+            "བཀའ"
+          ],
+          "expected": "ཆེ",
+          "description": "speech → great (kadinchhe)",
+          "top1": "ཆེ",
+          "top5": [
+            "ཆེ",
+            "མཆེད",
+            "ཆེའོ",
+            "གཅད"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "gye",
+          "context": [
+            "བདུན"
+          ],
+          "expected": "བརྒྱད",
+          "description": "7 → 8",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "gye",
+          "context": [
+            "སངས"
+          ],
+          "expected": "རྒྱས",
+          "description": "Buddha → spread (sangye)",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "gu",
+          "context": [
+            "བརྒྱད"
+          ],
+          "expected": "དགུ",
+          "description": "8 → 9",
+          "top1": "གུ",
+          "top5": [
+            "གུ",
+            "དགུ",
+            "རྒུ",
+            "མགུ",
+            "འགུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "gu",
+          "context": [
+            "ཆོས"
+          ],
+          "expected": "སྐུ",
+          "description": "dharma → body (chökyi ku)",
+          "top1": "གུ",
+          "top5": [
+            "གུ",
+            "དགུ",
+            "རྒུ",
+            "མགུ",
+            "འགུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "dun",
+          "context": [
+            "དྲུག"
+          ],
+          "expected": "བདུན",
+          "description": "6 → 7",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "dun",
+          "context": [
+            "ཆོས"
+          ],
+          "expected": "དོན",
+          "description": "dharma → meaning",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "shi",
+          "context": [
+            "གསུམ"
+          ],
+          "expected": "བཞི",
+          "description": "3 → 4",
+          "top1": "ཤིས",
+          "top5": [
+            "ཤིས",
+            "ཤི",
+            "ཞིའི",
+            "གཤིས",
+            "ཤིད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "shi",
+          "context": [
+            "སྐྱེ"
+          ],
+          "expected": "འཆི",
+          "description": "birth → death",
+          "top1": "ཤིས",
+          "top5": [
+            "ཤིས",
+            "ཤི",
+            "ཞིའི",
+            "གཤིས",
+            "ཤིད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "la",
+          "context": [
+            "ཆོས"
+          ],
+          "expected": "ལ",
+          "description": "dharma + to (particle)",
+          "top1": "ལ",
+          "top5": [
+            "ལ",
+            "བླ",
+            "གླ",
+            "སླ",
+            "ལའང"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "la",
+          "context": [
+            "སྲོག"
+          ],
+          "expected": "བླ",
+          "description": "life → soul",
+          "top1": "ལ",
+          "top5": [
+            "ལ",
+            "བླ",
+            "གླ",
+            "སླ",
+            "ལའང"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "sum",
+          "context": [
+            "གཉིས"
+          ],
+          "expected": "གསུམ",
+          "description": "2 → 3",
+          "top1": "གསུམ",
+          "top5": [
+            "གསུམ",
+            "དབང",
+            "བདེ",
+            "མའི",
+            "སུམ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nyi",
+          "context": [
+            "གཅིག"
+          ],
+          "expected": "གཉིས",
+          "description": "1 → 2",
+          "top1": "གཉིས",
+          "top5": [
+            "གཉིས",
+            "ཉིད",
+            "ཉི",
+            "སྐུའི",
+            "གཉིད"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nyi",
+          "context": [
+            "པད"
+          ],
+          "expected": "ཉི",
+          "description": "lotus → sun (pé nyi den)",
+          "top1": "གཉིས",
+          "top5": [
+            "གཉིས",
+            "ཉིད",
+            "ཉི",
+            "སྐུའི",
+            "གཉིད"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        }
+      ]
+    },
+    "ngram_context": {
+      "label": "ngram_context",
+      "n_cases": 46,
+      "top1_acc": 0.2826086956521739,
+      "top5_acc": 0.5434782608695652,
+      "details": [
+        {
+          "phonetic": "chu",
+          "context": [
+            "དགུ"
+          ],
+          "expected": "བཅུ",
+          "description": "9 → 10 (counting sequence)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "བརྒྱད"
+          ],
+          "expected": "བཅུ",
+          "description": "8 → should expect 10 in counting ctx (weak)",
+          "top1": "ཅུ",
+          "top5": [
+            "ཅུ",
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "ཐུང"
+          ],
+          "expected": "ཆུ",
+          "description": "drink → water",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "འཐུང"
+          ],
+          "expected": "ཆུ",
+          "description": "drink (honorific) → water",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "རྒྱ"
+          ],
+          "expected": "ཆུ",
+          "description": "ocean context (rgya mtsho)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "མིག"
+          ],
+          "expected": "ཆུ",
+          "description": "eye → tears (mig chu)",
+          "top1": "ཆུ",
+          "top5": [
+            "ཆུ",
+            "བཅུ",
+            "དུས",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "ཁ"
+          ],
+          "expected": "ཆུ",
+          "description": "mouth → saliva (kha chu)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "དུས",
+            "ཆུ",
+            "བྱུང",
+            "ཅུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "བཞི"
+          ],
+          "expected": "ལྔ",
+          "description": "4 → 5 (counting)",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "མངའ",
+            "ང",
+            "རྔ",
+            "སྔ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "ཡིན"
+          ],
+          "expected": "ང",
+          "description": "copula → I (nga yin)",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "མངའ",
+            "ང",
+            "རྔ",
+            "སྔ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "རེད"
+          ],
+          "expected": "ང",
+          "description": "factual → I",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "མངའ",
+            "ང",
+            "རྔ",
+            "སྔ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "བྱེད"
+          ],
+          "expected": "ང",
+          "description": "do → I",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "མངའ",
+            "ང",
+            "རྔ",
+            "སྔ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dak",
+          "context": [
+            "བདག"
+          ],
+          "expected": "བདག",
+          "description": "self doubled (dak dak)",
+          "top1": "ལུས",
+          "top5": [
+            "ལུས",
+            "བདག",
+            "དག",
+            "བཞིན",
+            "མཐའ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dak",
+          "context": [
+            "རིག"
+          ],
+          "expected": "བདག",
+          "description": "awareness → self (rigpé dak)",
+          "top1": "བདག",
+          "top5": [
+            "བདག",
+            "དག",
+            "བཞིན",
+            "ལུས",
+            "མཐའ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dak",
+          "context": [
+            "སེམས"
+          ],
+          "expected": "བདག",
+          "description": "mind → self",
+          "top1": "བདག",
+          "top5": [
+            "བདག",
+            "དག",
+            "བཞིན",
+            "ལུས",
+            "མཐའ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dag",
+          "context": [
+            "སྣང"
+          ],
+          "expected": "དག",
+          "description": "pure vision (nangdak)",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "druk",
+          "context": [
+            "ལྔ"
+          ],
+          "expected": "དྲུག",
+          "description": "5 → 6",
+          "top1": "དྲུག",
+          "top5": [
+            "དྲུག",
+            "ནང",
+            "འཁྲུགས",
+            "འབྲུག",
+            "འཁྲུག"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "druk",
+          "context": [
+            "ལྷོ"
+          ],
+          "expected": "འབྲུག",
+          "description": "south → Bhutan",
+          "top1": "འབྲུག",
+          "top5": [
+            "འབྲུག",
+            "དྲུག",
+            "ནང",
+            "འཁྲུགས",
+            "འཁྲུག"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "druk",
+          "context": [
+            "རྒྱལ"
+          ],
+          "expected": "འབྲུག",
+          "description": "royal → Bhutan (drukyul)",
+          "top1": "དྲུག",
+          "top5": [
+            "དྲུག",
+            "ནང",
+            "འཁྲུགས",
+            "འབྲུག",
+            "འཁྲུག"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "སངས"
+          ],
+          "expected": "ཆོས",
+          "description": "Buddha → dharma (sangye choe)",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "རྒྱས"
+          ],
+          "expected": "ཆོས",
+          "description": "expand → dharma",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "བླ"
+          ],
+          "expected": "ཆོས",
+          "description": "lama → dharma",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "ཡིན"
+          ],
+          "expected": "ཁྱོད",
+          "description": "is → you",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "བྱེད"
+          ],
+          "expected": "ཁྱོད",
+          "description": "do → you",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "ཡོད"
+          ],
+          "expected": "མེད",
+          "description": "yöd → med (have/not-have)",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "ཤེས"
+          ],
+          "expected": "མེད",
+          "description": "know → not-know",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "འབར"
+          ],
+          "expected": "མེ",
+          "description": "burn → fire",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "སྲེག"
+          ],
+          "expected": "མེ",
+          "description": "burn → fire",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "རིན"
+          ],
+          "expected": "རྗེ",
+          "description": "precious → lord (rinpoche je)",
+          "top1": "འབྱེད",
+          "top5": [
+            "འབྱེད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "བླ"
+          ],
+          "expected": "རྗེ",
+          "description": "lama → lord",
+          "top1": "འབྱེད",
+          "top5": [
+            "འབྱེད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "ལས"
+          ],
+          "expected": "བྱེད",
+          "description": "action → do",
+          "top1": "འབྱེད",
+          "top5": [
+            "འབྱེད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "འགྲུབ"
+          ],
+          "expected": "བྱེད",
+          "description": "accomplish → do",
+          "top1": "འབྱེད",
+          "top5": [
+            "འབྱེད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "che",
+          "context": [
+            "ཐུགས"
+          ],
+          "expected": "ཆེ",
+          "description": "mind → great (thukjechhe)",
+          "top1": "ཆེ",
+          "top5": [
+            "ཆེ",
+            "མཆེད",
+            "ཆེའོ",
+            "གཅད"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "che",
+          "context": [
+            "བཀའ"
+          ],
+          "expected": "ཆེ",
+          "description": "speech → great (kadinchhe)",
+          "top1": "ཆེ",
+          "top5": [
+            "ཆེ",
+            "མཆེད",
+            "ཆེའོ",
+            "གཅད"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "gye",
+          "context": [
+            "བདུན"
+          ],
+          "expected": "བརྒྱད",
+          "description": "7 → 8",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "gye",
+          "context": [
+            "སངས"
+          ],
+          "expected": "རྒྱས",
+          "description": "Buddha → spread (sangye)",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "gu",
+          "context": [
+            "བརྒྱད"
+          ],
+          "expected": "དགུ",
+          "description": "8 → 9",
+          "top1": "གུ",
+          "top5": [
+            "གུ",
+            "དགུ",
+            "རྒུ",
+            "མགུ",
+            "འགུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "gu",
+          "context": [
+            "ཆོས"
+          ],
+          "expected": "སྐུ",
+          "description": "dharma → body (chökyi ku)",
+          "top1": "གུ",
+          "top5": [
+            "གུ",
+            "དགུ",
+            "རྒུ",
+            "མགུ",
+            "འགུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "dun",
+          "context": [
+            "དྲུག"
+          ],
+          "expected": "བདུན",
+          "description": "6 → 7",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "dun",
+          "context": [
+            "ཆོས"
+          ],
+          "expected": "དོན",
+          "description": "dharma → meaning",
+          "top1": null,
+          "top5": [],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "shi",
+          "context": [
+            "གསུམ"
+          ],
+          "expected": "བཞི",
+          "description": "3 → 4",
+          "top1": "ཤིས",
+          "top5": [
+            "ཤིས",
+            "ཤི",
+            "ཞིའི",
+            "གཤིས",
+            "ཤིད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "shi",
+          "context": [
+            "སྐྱེ"
+          ],
+          "expected": "འཆི",
+          "description": "birth → death",
+          "top1": "ཤི",
+          "top5": [
+            "ཤི",
+            "ཤིས",
+            "ཞིའི",
+            "གཤིས",
+            "ཤིད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "la",
+          "context": [
+            "ཆོས"
+          ],
+          "expected": "ལ",
+          "description": "dharma + to (particle)",
+          "top1": "ལ",
+          "top5": [
+            "ལ",
+            "བླ",
+            "གླ",
+            "སླ",
+            "ལའང"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "la",
+          "context": [
+            "སྲོག"
+          ],
+          "expected": "བླ",
+          "description": "life → soul",
+          "top1": "ལ",
+          "top5": [
+            "ལ",
+            "བླ",
+            "གླ",
+            "སླ",
+            "ལའང"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "sum",
+          "context": [
+            "གཉིས"
+          ],
+          "expected": "གསུམ",
+          "description": "2 → 3",
+          "top1": "གསུམ",
+          "top5": [
+            "གསུམ",
+            "དབང",
+            "བདེ",
+            "མའི",
+            "སུམ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nyi",
+          "context": [
+            "གཅིག"
+          ],
+          "expected": "གཉིས",
+          "description": "1 → 2",
+          "top1": "གཉིས",
+          "top5": [
+            "གཉིས",
+            "ཉིད",
+            "ཉི",
+            "སྐུའི",
+            "གཉིད"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nyi",
+          "context": [
+            "པད"
+          ],
+          "expected": "ཉི",
+          "description": "lotus → sun (pé nyi den)",
+          "top1": "ཉི",
+          "top5": [
+            "ཉི",
+            "གཉིས",
+            "ཉིད",
+            "སྐུའི",
+            "གཉིད"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        }
+      ]
+    },
+    "model_only": {
+      "label": "model_only",
+      "n_cases": 46,
+      "top1_acc": 0.30434782608695654,
+      "top5_acc": 0.6739130434782609,
+      "details": [
+        {
+          "phonetic": "chu",
+          "context": [
+            "དགུ"
+          ],
+          "expected": "བཅུ",
+          "description": "9 → 10 (counting sequence)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "ཆུ",
+            "ཅུ",
+            "མཆུ",
+            "ཆུབ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "བརྒྱད"
+          ],
+          "expected": "བཅུ",
+          "description": "8 → should expect 10 in counting ctx (weak)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "ཅུ",
+            "ཆུ",
+            "ཆེན",
+            "རྩིའི"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "ཐུང"
+          ],
+          "expected": "ཆུ",
+          "description": "drink → water",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "ཆུ",
+            "མཆུ",
+            "ཅུ",
+            "རྩིའི"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "འཐུང"
+          ],
+          "expected": "ཆུ",
+          "description": "drink (honorific) → water",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "རྩིའི",
+            "ཁྲོ",
+            "ཆུ",
+            "བ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "རྒྱ"
+          ],
+          "expected": "ཆུ",
+          "description": "ocean context (rgya mtsho)",
+          "top1": "མཚོ",
+          "top5": [
+            "མཚོ",
+            "མཚོའི",
+            "ཆེན",
+            "བཅུ",
+            "ཆུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "མིག"
+          ],
+          "expected": "ཆུ",
+          "description": "eye → tears (mig chu)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "ཅུ",
+            "ཆུ",
+            "མཆུ",
+            "ཤུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "ཁ"
+          ],
+          "expected": "ཆུ",
+          "description": "mouth → saliva (kha chu)",
+          "top1": "ཆུ",
+          "top5": [
+            "ཆུ",
+            "བཅུ",
+            "མཆུ",
+            "ཅུ",
+            "ཆེན"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "བཞི"
+          ],
+          "expected": "ལྔ",
+          "description": "4 → 5 (counting)",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "མངའ",
+            "ཡི",
+            "རྔ",
+            "ངག"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "ཡིན"
+          ],
+          "expected": "ང",
+          "description": "copula → I (nga yin)",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "ང",
+            "དུག",
+            "པ",
+            "ན"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "རེད"
+          ],
+          "expected": "ང",
+          "description": "factual → I",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "ང",
+            "མངའ",
+            "རྔ",
+            "སྔ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "བྱེད"
+          ],
+          "expected": "ང",
+          "description": "do → I",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "པ",
+            "ང",
+            "པའི",
+            "རྔ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dak",
+          "context": [
+            "བདག"
+          ],
+          "expected": "བདག",
+          "description": "self doubled (dak dak)",
+          "top1": "ཅག",
+          "top5": [
+            "ཅག",
+            "གིས",
+            "ལ",
+            "ཉིད",
+            "གཞན"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "dak",
+          "context": [
+            "རིག"
+          ],
+          "expected": "བདག",
+          "description": "awareness → self (rigpé dak)",
+          "top1": "འཛིན",
+          "top5": [
+            "འཛིན",
+            "བདག",
+            "པ",
+            "པའི",
+            "པས"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dak",
+          "context": [
+            "སེམས"
+          ],
+          "expected": "བདག",
+          "description": "mind → self",
+          "top1": "ཅན",
+          "top5": [
+            "ཅན",
+            "དག",
+            "བདག",
+            "དཔའ",
+            "ཐམས"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dag",
+          "context": [
+            "སྣང"
+          ],
+          "expected": "དག",
+          "description": "pure vision (nangdak)",
+          "top1": "བ",
+          "top5": [
+            "བ",
+            "དང",
+            "སྲིད",
+            "བདེ",
+            "བའི"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "druk",
+          "context": [
+            "ལྔ"
+          ],
+          "expected": "དྲུག",
+          "description": "5 → 6",
+          "top1": "དྲུག",
+          "top5": [
+            "དྲུག",
+            "ཕྲུག",
+            "ཡིས",
+            "རུ",
+            "དང"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "druk",
+          "context": [
+            "ལྷོ"
+          ],
+          "expected": "འབྲུག",
+          "description": "south → Bhutan",
+          "top1": "དྲུག",
+          "top5": [
+            "དྲུག",
+            "ཕྱོགས",
+            "པོའི",
+            "མཆོག",
+            "མོ"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "druk",
+          "context": [
+            "རྒྱལ"
+          ],
+          "expected": "འབྲུག",
+          "description": "royal → Bhutan (drukyul)",
+          "top1": "བ",
+          "top5": [
+            "བ",
+            "པོའི",
+            "བའི",
+            "པོ",
+            "སྲས"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "སངས"
+          ],
+          "expected": "ཆོས",
+          "description": "Buddha → dharma (sangye choe)",
+          "top1": "རྒྱས",
+          "top5": [
+            "རྒྱས",
+            "བཅོམ",
+            "བླ",
+            "ཆོས",
+            "བདག"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "རྒྱས"
+          ],
+          "expected": "ཆོས",
+          "description": "expand → dharma",
+          "top1": "ཆོས",
+          "top5": [
+            "ཆོས",
+            "རྣམས",
+            "ཆེན",
+            "པར",
+            "ཀུན"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "བླ"
+          ],
+          "expected": "ཆོས",
+          "description": "lama → dharma",
+          "top1": "མ",
+          "top5": [
+            "མ",
+            "མའི",
+            "མེད",
+            "མས",
+            "མར"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "ཡིན"
+          ],
+          "expected": "ཁྱོད",
+          "description": "is → you",
+          "top1": "ཆད",
+          "top5": [
+            "ཆད",
+            "ཆོས",
+            "པར",
+            "མཆོད",
+            "པ"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "བྱེད"
+          ],
+          "expected": "ཁྱོད",
+          "description": "do → you",
+          "top1": "ཆོ",
+          "top5": [
+            "ཆོ",
+            "པ",
+            "པའི",
+            "དོ",
+            "ནུས"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "ཡོད"
+          ],
+          "expected": "མེད",
+          "description": "yöd → med (have/not-have)",
+          "top1": "མེད",
+          "top5": [
+            "མེད",
+            "པ",
+            "པའི",
+            "མ",
+            "མེ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "ཤེས"
+          ],
+          "expected": "མེད",
+          "description": "know → not-know",
+          "top1": "མེ",
+          "top5": [
+            "མེ",
+            "རབ",
+            "དཔག",
+            "ལྔ",
+            "མེད"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "འབར"
+          ],
+          "expected": "མེ",
+          "description": "burn → fire",
+          "top1": "བའི",
+          "top5": [
+            "བའི",
+            "བ",
+            "བས",
+            "རྨེ",
+            "མེད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "སྲེག"
+          ],
+          "expected": "མེ",
+          "description": "burn → fire",
+          "top1": "མེ",
+          "top5": [
+            "མེ",
+            "མེད",
+            "མས",
+            "མོས",
+            "མ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "རིན"
+          ],
+          "expected": "རྗེ",
+          "description": "precious → lord (rinpoche je)",
+          "top1": "ཆེན",
+          "top5": [
+            "ཆེན",
+            "པོ",
+            "ཆེ",
+            "ལ",
+            "རྗེའི"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "བླ"
+          ],
+          "expected": "རྗེ",
+          "description": "lama → lord",
+          "top1": "མ",
+          "top5": [
+            "མ",
+            "མེད",
+            "ལ",
+            "མའི",
+            "མར"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "ལས"
+          ],
+          "expected": "བྱེད",
+          "description": "action → do",
+          "top1": "ཀྱི",
+          "top5": [
+            "ཀྱི",
+            "བྱེད",
+            "ལ",
+            "ཀྱིས",
+            "རྗེའི"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "འགྲུབ"
+          ],
+          "expected": "བྱེད",
+          "description": "accomplish → do",
+          "top1": "པར",
+          "top5": [
+            "པར",
+            "བྱེད",
+            "བྱས",
+            "འཇུག",
+            "ཞིང"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "che",
+          "context": [
+            "ཐུགས"
+          ],
+          "expected": "ཆེ",
+          "description": "mind → great (thukjechhe)",
+          "top1": "རྗེའི",
+          "top5": [
+            "རྗེའི",
+            "རྗེ",
+            "རྗེས",
+            "ཀྱི",
+            "སྲས"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "che",
+          "context": [
+            "བཀའ"
+          ],
+          "expected": "ཆེ",
+          "description": "speech → great (kadinchhe)",
+          "top1": "དྲིན",
+          "top5": [
+            "དྲིན",
+            "སྡོད",
+            "སྐད",
+            "བབས",
+            "བབ"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "gye",
+          "context": [
+            "བདུན"
+          ],
+          "expected": "བརྒྱད",
+          "description": "7 → 8",
+          "top1": "དགྱེས",
+          "top5": [
+            "དགྱེས",
+            "ལས",
+            "པ",
+            "པའི",
+            "ཆེན"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "gye",
+          "context": [
+            "སངས"
+          ],
+          "expected": "རྒྱས",
+          "description": "Buddha → spread (sangye)",
+          "top1": "རྒྱས",
+          "top5": [
+            "རྒྱས",
+            "བླ",
+            "པའི",
+            "ཆེན",
+            "བཅོམ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "gu",
+          "context": [
+            "བརྒྱད"
+          ],
+          "expected": "དགུ",
+          "description": "8 → 9",
+          "top1": "དགུ",
+          "top5": [
+            "དགུ",
+            "གུ",
+            "རྒུ",
+            "པ",
+            "དགུའི"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "gu",
+          "context": [
+            "ཆོས"
+          ],
+          "expected": "སྐུ",
+          "description": "dharma → body (chökyi ku)",
+          "top1": "ཀྱི",
+          "top5": [
+            "ཀྱི",
+            "སྐུའི",
+            "རྣམས",
+            "སྐུ",
+            "དགུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dun",
+          "context": [
+            "དྲུག"
+          ],
+          "expected": "བདུན",
+          "description": "6 → 7",
+          "top1": "པ",
+          "top5": [
+            "པ",
+            "བདུན",
+            "པས",
+            "ལྡན",
+            "དུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dun",
+          "context": [
+            "ཆོས"
+          ],
+          "expected": "དོན",
+          "description": "dharma → meaning",
+          "top1": "ཀྱི",
+          "top5": [
+            "ཀྱི",
+            "ཉིད",
+            "ལྡན",
+            "འདྲེན",
+            "དང"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "shi",
+          "context": [
+            "གསུམ"
+          ],
+          "expected": "བཞི",
+          "description": "3 → 4",
+          "top1": "གཤིས",
+          "top5": [
+            "གཤིས",
+            "མཐུན",
+            "ཤི",
+            "ཞི",
+            "བཤད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "shi",
+          "context": [
+            "སྐྱེ"
+          ],
+          "expected": "འཆི",
+          "description": "birth → death",
+          "top1": "ཤི",
+          "top5": [
+            "ཤི",
+            "བ",
+            "མཐུན",
+            "འཆི",
+            "སྤྱི"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "la",
+          "context": [
+            "ཆོས"
+          ],
+          "expected": "ལ",
+          "description": "dharma + to (particle)",
+          "top1": "ལ",
+          "top5": [
+            "ལ",
+            "ཀུན",
+            "སྐུའི",
+            "ཀྱི",
+            "ཉིད"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "la",
+          "context": [
+            "སྲོག"
+          ],
+          "expected": "བླ",
+          "description": "life → soul",
+          "top1": "ལ",
+          "top5": [
+            "ལ",
+            "གི",
+            "བླ",
+            "མ",
+            "ཀུན"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "sum",
+          "context": [
+            "གཉིས"
+          ],
+          "expected": "གསུམ",
+          "description": "2 → 3",
+          "top1": "གསུམ",
+          "top5": [
+            "གསུམ",
+            "སུ",
+            "སུམ",
+            "དབང",
+            "དུས"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nyi",
+          "context": [
+            "གཅིག"
+          ],
+          "expected": "གཉིས",
+          "description": "1 → 2",
+          "top1": "གཉིས",
+          "top5": [
+            "གཉིས",
+            "ཉིད",
+            "བསྡུས",
+            "ཉི",
+            "པ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nyi",
+          "context": [
+            "པད"
+          ],
+          "expected": "ཉི",
+          "description": "lotus → sun (pé nyi den)",
+          "top1": "ཉི",
+          "top5": [
+            "ཉི",
+            "གཉིས",
+            "ཉིའི",
+            "མེད",
+            "དཀར"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        }
+      ]
+    },
+    "hybrid": {
+      "label": "hybrid",
+      "n_cases": 46,
+      "top1_acc": 0.2826086956521739,
+      "top5_acc": 0.6739130434782609,
+      "details": [
+        {
+          "phonetic": "chu",
+          "context": [
+            "དགུ"
+          ],
+          "expected": "བཅུ",
+          "description": "9 → 10 (counting sequence)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "པ",
+            "ཆུ",
+            "དུས",
+            "པའི"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "བརྒྱད"
+          ],
+          "expected": "བཅུ",
+          "description": "8 → should expect 10 in counting ctx (weak)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "ཅུ",
+            "པ",
+            "ཆུ",
+            "དུས"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "ཐུང"
+          ],
+          "expected": "ཆུ",
+          "description": "drink → water",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "ཆུ",
+            "བ",
+            "དུས",
+            "མཆུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "འཐུང"
+          ],
+          "expected": "ཆུ",
+          "description": "drink (honorific) → water",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "བ",
+            "ཁྲོ",
+            "ཆུ",
+            "རྩིའི"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "རྒྱ"
+          ],
+          "expected": "ཆུ",
+          "description": "ocean context (rgya mtsho)",
+          "top1": "མཚོ",
+          "top5": [
+            "མཚོ",
+            "མཚོའི",
+            "ཆེན",
+            "བཅུ",
+            "ཆུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "མིག"
+          ],
+          "expected": "ཆུ",
+          "description": "eye → tears (mig chu)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "ཅུ",
+            "ཆུ",
+            "ཏུ",
+            "དུས"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "chu",
+          "context": [
+            "ཁ"
+          ],
+          "expected": "ཆུ",
+          "description": "mouth → saliva (kha chu)",
+          "top1": "བཅུ",
+          "top5": [
+            "བཅུ",
+            "ཆུ",
+            "མཆུ",
+            "ཅུ",
+            "བ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "བཞི"
+          ],
+          "expected": "ལྔ",
+          "description": "4 → 5 (counting)",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "པ",
+            "མངའ",
+            "ཡི",
+            "པའི"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "ཡིན"
+          ],
+          "expected": "ང",
+          "description": "copula → I (nga yin)",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "པའི",
+            "པ",
+            "ང",
+            "མངའ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "རེད"
+          ],
+          "expected": "ང",
+          "description": "factual → I",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "ང",
+            "མངའ",
+            "རྔ",
+            "སྔ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nga",
+          "context": [
+            "བྱེད"
+          ],
+          "expected": "ང",
+          "description": "do → I",
+          "top1": "ལྔ",
+          "top5": [
+            "ལྔ",
+            "པ",
+            "པའི",
+            "ང",
+            "ཀྱི"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dak",
+          "context": [
+            "བདག"
+          ],
+          "expected": "བདག",
+          "description": "self doubled (dak dak)",
+          "top1": "གིས",
+          "top5": [
+            "གིས",
+            "ཅག",
+            "ལ",
+            "ཉིད",
+            "གི"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "dak",
+          "context": [
+            "རིག"
+          ],
+          "expected": "བདག",
+          "description": "awareness → self (rigpé dak)",
+          "top1": "འཛིན",
+          "top5": [
+            "འཛིན",
+            "པ",
+            "བདག",
+            "པའི",
+            "དག"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dak",
+          "context": [
+            "སེམས"
+          ],
+          "expected": "བདག",
+          "description": "mind → self",
+          "top1": "ཅན",
+          "top5": [
+            "ཅན",
+            "དཔའ",
+            "བདག",
+            "དག",
+            "ཀྱི"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dag",
+          "context": [
+            "སྣང"
+          ],
+          "expected": "དག",
+          "description": "pure vision (nangdak)",
+          "top1": "བ",
+          "top5": [
+            "བ",
+            "སྲིད",
+            "བའི",
+            "དང",
+            "སྟོང"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "druk",
+          "context": [
+            "ལྔ"
+          ],
+          "expected": "དྲུག",
+          "description": "5 → 6",
+          "top1": "དྲུག",
+          "top5": [
+            "དྲུག",
+            "པ",
+            "ཕྲུག",
+            "དང",
+            "ལྡན"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "druk",
+          "context": [
+            "ལྷོ"
+          ],
+          "expected": "འབྲུག",
+          "description": "south → Bhutan",
+          "top1": "དྲུག",
+          "top5": [
+            "དྲུག",
+            "ཕྱོགས",
+            "ནུབ",
+            "བྲག",
+            "ནང"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "druk",
+          "context": [
+            "རྒྱལ"
+          ],
+          "expected": "འབྲུག",
+          "description": "royal → Bhutan (drukyul)",
+          "top1": "བ",
+          "top5": [
+            "བ",
+            "པོ",
+            "བའི",
+            "དྲུག",
+            "པོའི"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "སངས"
+          ],
+          "expected": "ཆོས",
+          "description": "Buddha → dharma (sangye choe)",
+          "top1": "རྒྱས",
+          "top5": [
+            "རྒྱས",
+            "བཅོམ",
+            "བླ",
+            "ཆོས",
+            "བདག"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "རྒྱས"
+          ],
+          "expected": "ཆོས",
+          "description": "expand → dharma",
+          "top1": "ཆོས",
+          "top5": [
+            "ཆོས",
+            "པ",
+            "པའི",
+            "པར",
+            "ཀྱི"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "བླ"
+          ],
+          "expected": "ཆོས",
+          "description": "lama → dharma",
+          "top1": "མ",
+          "top5": [
+            "མ",
+            "མའི",
+            "མེད",
+            "མར",
+            "མས"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "ཡིན"
+          ],
+          "expected": "ཁྱོད",
+          "description": "is → you",
+          "top1": "པ",
+          "top5": [
+            "པ",
+            "པའི",
+            "པར",
+            "ཆད",
+            "ཆོས"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "choe",
+          "context": [
+            "བྱེད"
+          ],
+          "expected": "ཁྱོད",
+          "description": "do → you",
+          "top1": "པ",
+          "top5": [
+            "པ",
+            "པའི",
+            "ཀྱི",
+            "ཆོ",
+            "དོ"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "ཡོད"
+          ],
+          "expected": "མེད",
+          "description": "yöd → med (have/not-have)",
+          "top1": "མེད",
+          "top5": [
+            "མེད",
+            "པའི",
+            "པ",
+            "པར",
+            "མ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "ཤེས"
+          ],
+          "expected": "མེད",
+          "description": "know → not-know",
+          "top1": "རབ",
+          "top5": [
+            "རབ",
+            "མེ",
+            "པ",
+            "དཔག",
+            "ལྔ"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "འབར"
+          ],
+          "expected": "མེ",
+          "description": "burn → fire",
+          "top1": "བའི",
+          "top5": [
+            "བའི",
+            "བ",
+            "བས",
+            "རྨེ",
+            "མེད"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "me",
+          "context": [
+            "སྲེག"
+          ],
+          "expected": "མེ",
+          "description": "burn → fire",
+          "top1": "མེ",
+          "top5": [
+            "མེ",
+            "མེད",
+            "པ",
+            "མས",
+            "མོས"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "རིན"
+          ],
+          "expected": "རྗེ",
+          "description": "precious → lord (rinpoche je)",
+          "top1": "ཆེན",
+          "top5": [
+            "ཆེན",
+            "པོ",
+            "འབྱེད",
+            "ཆེ",
+            "ལ"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "བླ"
+          ],
+          "expected": "རྗེ",
+          "description": "lama → lord",
+          "top1": "མ",
+          "top5": [
+            "མ",
+            "འབྱེད",
+            "མེད",
+            "མའི",
+            "ལ"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "ལས"
+          ],
+          "expected": "བྱེད",
+          "description": "action → do",
+          "top1": "འབྱེད",
+          "top5": [
+            "འབྱེད",
+            "ཀྱི",
+            "ལ",
+            "འདས",
+            "བྱེད"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "je",
+          "context": [
+            "འགྲུབ"
+          ],
+          "expected": "བྱེད",
+          "description": "accomplish → do",
+          "top1": "པར",
+          "top5": [
+            "པར",
+            "འབྱེད",
+            "པའི",
+            "གྱུར",
+            "པ"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "che",
+          "context": [
+            "ཐུགས"
+          ],
+          "expected": "ཆེ",
+          "description": "mind → great (thukjechhe)",
+          "top1": "རྗེའི",
+          "top5": [
+            "རྗེའི",
+            "རྗེ",
+            "ཆེ",
+            "རྗེས",
+            "དམ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "che",
+          "context": [
+            "བཀའ"
+          ],
+          "expected": "ཆེ",
+          "description": "speech → great (kadinchhe)",
+          "top1": "དྲིན",
+          "top5": [
+            "དྲིན",
+            "ཆེ",
+            "སྡོད",
+            "བབས",
+            "སྐད"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "gye",
+          "context": [
+            "བདུན"
+          ],
+          "expected": "བརྒྱད",
+          "description": "7 → 8",
+          "top1": "པ",
+          "top5": [
+            "པ",
+            "པའི",
+            "དགྱེས",
+            "ལས",
+            "གྱི"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "gye",
+          "context": [
+            "སངས"
+          ],
+          "expected": "རྒྱས",
+          "description": "Buddha → spread (sangye)",
+          "top1": "རྒྱས",
+          "top5": [
+            "རྒྱས",
+            "བླ",
+            "པ",
+            "ལ",
+            "པའི"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "gu",
+          "context": [
+            "བརྒྱད"
+          ],
+          "expected": "དགུ",
+          "description": "8 → 9",
+          "top1": "དགུ",
+          "top5": [
+            "དགུ",
+            "གུ",
+            "པ",
+            "ཀྱི",
+            "ཅུ"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "gu",
+          "context": [
+            "ཆོས"
+          ],
+          "expected": "སྐུ",
+          "description": "dharma → body (chökyi ku)",
+          "top1": "ཀྱི",
+          "top5": [
+            "ཀྱི",
+            "གུ",
+            "དགུ",
+            "སྐུའི",
+            "སྐུ"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dun",
+          "context": [
+            "དྲུག"
+          ],
+          "expected": "བདུན",
+          "description": "6 → 7",
+          "top1": "པ",
+          "top5": [
+            "པ",
+            "ལྡན",
+            "བདུན",
+            "པའི",
+            "པས"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "dun",
+          "context": [
+            "ཆོས"
+          ],
+          "expected": "དོན",
+          "description": "dharma → meaning",
+          "top1": "ཀྱི",
+          "top5": [
+            "ཀྱི",
+            "ཉིད",
+            "ལ",
+            "དང",
+            "ལྡན"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "shi",
+          "context": [
+            "གསུམ"
+          ],
+          "expected": "བཞི",
+          "description": "3 → 4",
+          "top1": "གཤིས",
+          "top5": [
+            "གཤིས",
+            "གྱི",
+            "ཤིས",
+            "ཤི",
+            "མཐུན"
+          ],
+          "correct_top1": false,
+          "correct_top5": false
+        },
+        {
+          "phonetic": "shi",
+          "context": [
+            "སྐྱེ"
+          ],
+          "expected": "འཆི",
+          "description": "birth → death",
+          "top1": "ཤི",
+          "top5": [
+            "ཤི",
+            "བ",
+            "ཤིས",
+            "མཆེད",
+            "འཆི"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "la",
+          "context": [
+            "ཆོས"
+          ],
+          "expected": "ལ",
+          "description": "dharma + to (particle)",
+          "top1": "ལ",
+          "top5": [
+            "ལ",
+            "ཀྱི",
+            "ཀུན",
+            "ཉིད",
+            "སྐུའི"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "la",
+          "context": [
+            "སྲོག"
+          ],
+          "expected": "བླ",
+          "description": "life → soul",
+          "top1": "ལ",
+          "top5": [
+            "ལ",
+            "གི",
+            "བླ",
+            "མ",
+            "འཛིན"
+          ],
+          "correct_top1": false,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "sum",
+          "context": [
+            "གཉིས"
+          ],
+          "expected": "གསུམ",
+          "description": "2 → 3",
+          "top1": "གསུམ",
+          "top5": [
+            "གསུམ",
+            "སུ",
+            "པ",
+            "དབང",
+            "མེད"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nyi",
+          "context": [
+            "གཅིག"
+          ],
+          "expected": "གཉིས",
+          "description": "1 → 2",
+          "top1": "གཉིས",
+          "top5": [
+            "གཉིས",
+            "ཉིད",
+            "ཏུ",
+            "པ",
+            "ཕྱག"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        },
+        {
+          "phonetic": "nyi",
+          "context": [
+            "པད"
+          ],
+          "expected": "ཉི",
+          "description": "lotus → sun (pé nyi den)",
+          "top1": "ཉི",
+          "top5": [
+            "ཉི",
+            "གཉིས",
+            "དཀར",
+            "ཉིའི",
+            "འབྱུང"
+          ],
+          "correct_top1": true,
+          "correct_top5": true
+        }
+      ]
+    }
+  },
+  "heldout": {
+    "freq_only": {
+      "n": 20000,
+      "top1": 0.21355,
+      "top5": 0.28095,
+      "top10": 0.2848,
+      "no_prediction": 0.15495,
+      "total_time_sec": 0.5886750221252441,
+      "ms_per_query": 0.02943375110626221
+    },
+    "ngram_context": {
+      "n": 20000,
+      "top1": 0.24585,
+      "top5": 0.28405,
+      "top10": 0.285,
+      "no_prediction": 0.15495,
+      "total_time_sec": 1.2492549419403076,
+      "ms_per_query": 0.06246274709701538
+    },
+    "model_only": {
+      "n": 20000,
+      "top1": 0.4889,
+      "top5": 0.6803,
+      "top10": 0.74325,
+      "no_prediction": 0.0,
+      "total_time_sec": 973.3269908428192,
+      "ms_per_query": 48.66634954214096
+    },
+    "hybrid": {
+      "n": 20000,
+      "top1": 0.52425,
+      "top5": 0.71645,
+      "top10": 0.77115,
+      "no_prediction": 0.0,
+      "total_time_sec": 1075.6127831935883,
+      "ms_per_query": 53.78063915967941
+    }
+  },
+  "n_params": 877096,
+  "vocab_size": 5000,
+  "n_homophone_cases": 46
+}

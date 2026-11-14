@@ -1,0 +1,4902 @@
+[
+  {
+    "variant1": "ka",
+    "variant2": "k",
+    "tibetan": "ཀ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ka",
+    "variant2": "ga",
+    "tibetan": "ཀ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "k",
+    "variant2": "ka",
+    "tibetan": "ཀ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "k",
+    "variant2": "ga",
+    "tibetan": "ཀ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ga",
+    "variant2": "ka",
+    "tibetan": "ཀ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ga",
+    "variant2": "k",
+    "tibetan": "ཀ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "kha",
+    "variant2": "kh",
+    "tibetan": "ཁ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "kha",
+    "variant2": "ka",
+    "tibetan": "ཁ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "kh",
+    "variant2": "kha",
+    "tibetan": "ཁ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "kh",
+    "variant2": "ka",
+    "tibetan": "ཁ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ka",
+    "variant2": "kha",
+    "tibetan": "ཁ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ka",
+    "variant2": "kh",
+    "tibetan": "ཁ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ga",
+    "variant2": "g",
+    "tibetan": "ག",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ga",
+    "variant2": "ka",
+    "tibetan": "ག",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ga",
+    "variant2": "kha",
+    "tibetan": "ག",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "g",
+    "variant2": "ga",
+    "tibetan": "ག",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "g",
+    "variant2": "ka",
+    "tibetan": "ག",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "g",
+    "variant2": "kha",
+    "tibetan": "ག",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ka",
+    "variant2": "ga",
+    "tibetan": "ག",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ka",
+    "variant2": "g",
+    "tibetan": "ག",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ka",
+    "variant2": "kha",
+    "tibetan": "ག",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "kha",
+    "variant2": "ga",
+    "tibetan": "ག",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "kha",
+    "variant2": "g",
+    "tibetan": "ག",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "kha",
+    "variant2": "ka",
+    "tibetan": "ག",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "nga",
+    "variant2": "ng",
+    "tibetan": "ང",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ng",
+    "variant2": "nga",
+    "tibetan": "ང",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ca",
+    "variant2": "cha",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ca",
+    "variant2": "ja",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ca",
+    "variant2": "ch",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ca",
+    "variant2": "c",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "cha",
+    "variant2": "ca",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "cha",
+    "variant2": "ja",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "cha",
+    "variant2": "ch",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "cha",
+    "variant2": "c",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ja",
+    "variant2": "ca",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ja",
+    "variant2": "cha",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ja",
+    "variant2": "ch",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ja",
+    "variant2": "c",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ch",
+    "variant2": "ca",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ch",
+    "variant2": "cha",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ch",
+    "variant2": "ja",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ch",
+    "variant2": "c",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "c",
+    "variant2": "ca",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "c",
+    "variant2": "cha",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "c",
+    "variant2": "ja",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "c",
+    "variant2": "ch",
+    "tibetan": "ཅ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "cha",
+    "variant2": "ch",
+    "tibetan": "ཆ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "cha",
+    "variant2": "ca",
+    "tibetan": "ཆ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ch",
+    "variant2": "cha",
+    "tibetan": "ཆ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ch",
+    "variant2": "ca",
+    "tibetan": "ཆ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ca",
+    "variant2": "cha",
+    "tibetan": "ཆ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ca",
+    "variant2": "ch",
+    "tibetan": "ཆ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ja",
+    "variant2": "j",
+    "tibetan": "ཇ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ja",
+    "variant2": "cha",
+    "tibetan": "ཇ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "j",
+    "variant2": "ja",
+    "tibetan": "ཇ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "j",
+    "variant2": "cha",
+    "tibetan": "ཇ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "cha",
+    "variant2": "ja",
+    "tibetan": "ཇ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "cha",
+    "variant2": "j",
+    "tibetan": "ཇ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "nya",
+    "variant2": "ny",
+    "tibetan": "ཉ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "nya",
+    "variant2": "na",
+    "tibetan": "ཉ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ny",
+    "variant2": "nya",
+    "tibetan": "ཉ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ny",
+    "variant2": "na",
+    "tibetan": "ཉ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "na",
+    "variant2": "nya",
+    "tibetan": "ཉ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "na",
+    "variant2": "ny",
+    "tibetan": "ཉ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ta",
+    "variant2": "t",
+    "tibetan": "ཏ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ta",
+    "variant2": "da",
+    "tibetan": "ཏ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "t",
+    "variant2": "ta",
+    "tibetan": "ཏ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "t",
+    "variant2": "da",
+    "tibetan": "ཏ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "da",
+    "variant2": "ta",
+    "tibetan": "ཏ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "da",
+    "variant2": "t",
+    "tibetan": "ཏ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tha",
+    "variant2": "th",
+    "tibetan": "ཐ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tha",
+    "variant2": "ta",
+    "tibetan": "ཐ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "th",
+    "variant2": "tha",
+    "tibetan": "ཐ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "th",
+    "variant2": "ta",
+    "tibetan": "ཐ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ta",
+    "variant2": "tha",
+    "tibetan": "ཐ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ta",
+    "variant2": "th",
+    "tibetan": "ཐ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "da",
+    "variant2": "d",
+    "tibetan": "ད",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "da",
+    "variant2": "ta",
+    "tibetan": "ད",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "da",
+    "variant2": "tha",
+    "tibetan": "ད",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "d",
+    "variant2": "da",
+    "tibetan": "ད",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "d",
+    "variant2": "ta",
+    "tibetan": "ད",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "d",
+    "variant2": "tha",
+    "tibetan": "ད",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ta",
+    "variant2": "da",
+    "tibetan": "ད",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ta",
+    "variant2": "d",
+    "tibetan": "ད",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ta",
+    "variant2": "tha",
+    "tibetan": "ད",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tha",
+    "variant2": "da",
+    "tibetan": "ད",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tha",
+    "variant2": "d",
+    "tibetan": "ད",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tha",
+    "variant2": "ta",
+    "tibetan": "ད",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "na",
+    "variant2": "n",
+    "tibetan": "ན",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "n",
+    "variant2": "na",
+    "tibetan": "ན",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "pa",
+    "variant2": "p",
+    "tibetan": "པ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "pa",
+    "variant2": "ba",
+    "tibetan": "པ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "p",
+    "variant2": "pa",
+    "tibetan": "པ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "p",
+    "variant2": "ba",
+    "tibetan": "པ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ba",
+    "variant2": "pa",
+    "tibetan": "པ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ba",
+    "variant2": "p",
+    "tibetan": "པ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "pha",
+    "variant2": "ph",
+    "tibetan": "ཕ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "pha",
+    "variant2": "pa",
+    "tibetan": "ཕ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ph",
+    "variant2": "pha",
+    "tibetan": "ཕ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ph",
+    "variant2": "pa",
+    "tibetan": "ཕ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "pa",
+    "variant2": "pha",
+    "tibetan": "ཕ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "pa",
+    "variant2": "ph",
+    "tibetan": "ཕ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ba",
+    "variant2": "b",
+    "tibetan": "བ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ba",
+    "variant2": "pa",
+    "tibetan": "བ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ba",
+    "variant2": "wa",
+    "tibetan": "བ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "b",
+    "variant2": "ba",
+    "tibetan": "བ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "b",
+    "variant2": "pa",
+    "tibetan": "བ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "b",
+    "variant2": "wa",
+    "tibetan": "བ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "pa",
+    "variant2": "ba",
+    "tibetan": "བ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "pa",
+    "variant2": "b",
+    "tibetan": "བ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "pa",
+    "variant2": "wa",
+    "tibetan": "བ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "wa",
+    "variant2": "ba",
+    "tibetan": "བ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "wa",
+    "variant2": "b",
+    "tibetan": "བ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "wa",
+    "variant2": "pa",
+    "tibetan": "བ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ma",
+    "variant2": "m",
+    "tibetan": "མ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "m",
+    "variant2": "ma",
+    "tibetan": "མ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tsa",
+    "variant2": "ts",
+    "tibetan": "ཙ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tsa",
+    "variant2": "za",
+    "tibetan": "ཙ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tsa",
+    "variant2": "dza",
+    "tibetan": "ཙ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ts",
+    "variant2": "tsa",
+    "tibetan": "ཙ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ts",
+    "variant2": "za",
+    "tibetan": "ཙ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ts",
+    "variant2": "dza",
+    "tibetan": "ཙ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "za",
+    "variant2": "tsa",
+    "tibetan": "ཙ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "za",
+    "variant2": "ts",
+    "tibetan": "ཙ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "za",
+    "variant2": "dza",
+    "tibetan": "ཙ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "dza",
+    "variant2": "tsa",
+    "tibetan": "ཙ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "dza",
+    "variant2": "ts",
+    "tibetan": "ཙ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "dza",
+    "variant2": "za",
+    "tibetan": "ཙ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tsha",
+    "variant2": "tsh",
+    "tibetan": "ཚ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tsha",
+    "variant2": "tsa",
+    "tibetan": "ཚ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tsh",
+    "variant2": "tsha",
+    "tibetan": "ཚ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tsh",
+    "variant2": "tsa",
+    "tibetan": "ཚ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tsa",
+    "variant2": "tsha",
+    "tibetan": "ཚ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tsa",
+    "variant2": "tsh",
+    "tibetan": "ཚ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "dza",
+    "variant2": "dz",
+    "tibetan": "ཛ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "dza",
+    "variant2": "za",
+    "tibetan": "ཛ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "dza",
+    "variant2": "tsa",
+    "tibetan": "ཛ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "dz",
+    "variant2": "dza",
+    "tibetan": "ཛ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "dz",
+    "variant2": "za",
+    "tibetan": "ཛ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "dz",
+    "variant2": "tsa",
+    "tibetan": "ཛ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "za",
+    "variant2": "dza",
+    "tibetan": "ཛ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "za",
+    "variant2": "dz",
+    "tibetan": "ཛ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "za",
+    "variant2": "tsa",
+    "tibetan": "ཛ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tsa",
+    "variant2": "dza",
+    "tibetan": "ཛ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tsa",
+    "variant2": "dz",
+    "tibetan": "ཛ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "tsa",
+    "variant2": "za",
+    "tibetan": "ཛ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "wa",
+    "variant2": "w",
+    "tibetan": "ཝ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "wa",
+    "variant2": "ba",
+    "tibetan": "ཝ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "w",
+    "variant2": "wa",
+    "tibetan": "ཝ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "w",
+    "variant2": "ba",
+    "tibetan": "ཝ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ba",
+    "variant2": "wa",
+    "tibetan": "ཝ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ba",
+    "variant2": "w",
+    "tibetan": "ཝ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "zha",
+    "variant2": "zh",
+    "tibetan": "ཞ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "zha",
+    "variant2": "sha",
+    "tibetan": "ཞ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "zh",
+    "variant2": "zha",
+    "tibetan": "ཞ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "zh",
+    "variant2": "sha",
+    "tibetan": "ཞ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "sha",
+    "variant2": "zha",
+    "tibetan": "ཞ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "sha",
+    "variant2": "zh",
+    "tibetan": "ཞ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "za",
+    "variant2": "z",
+    "tibetan": "ཟ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "za",
+    "variant2": "sa",
+    "tibetan": "ཟ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "z",
+    "variant2": "za",
+    "tibetan": "ཟ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "z",
+    "variant2": "sa",
+    "tibetan": "ཟ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "sa",
+    "variant2": "za",
+    "tibetan": "ཟ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "sa",
+    "variant2": "z",
+    "tibetan": "ཟ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "a",
+    "variant2": "'a",
+    "tibetan": "འ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "a",
+    "variant2": "ah",
+    "tibetan": "འ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "'a",
+    "variant2": "a",
+    "tibetan": "འ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "'a",
+    "variant2": "ah",
+    "tibetan": "འ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ah",
+    "variant2": "a",
+    "tibetan": "འ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ah",
+    "variant2": "'a",
+    "tibetan": "འ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ya",
+    "variant2": "y",
+    "tibetan": "ཡ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "y",
+    "variant2": "ya",
+    "tibetan": "ཡ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ra",
+    "variant2": "r",
+    "tibetan": "ར",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "r",
+    "variant2": "ra",
+    "tibetan": "ར",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "la",
+    "variant2": "l",
+    "tibetan": "ལ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "l",
+    "variant2": "la",
+    "tibetan": "ལ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "sha",
+    "variant2": "sh",
+    "tibetan": "ཤ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "sha",
+    "variant2": "sa",
+    "tibetan": "ཤ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "sh",
+    "variant2": "sha",
+    "tibetan": "ཤ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "sh",
+    "variant2": "sa",
+    "tibetan": "ཤ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "sa",
+    "variant2": "sha",
+    "tibetan": "ཤ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "sa",
+    "variant2": "sh",
+    "tibetan": "ཤ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "sa",
+    "variant2": "s",
+    "tibetan": "ས",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "s",
+    "variant2": "sa",
+    "tibetan": "ས",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ha",
+    "variant2": "h",
+    "tibetan": "ཧ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "h",
+    "variant2": "ha",
+    "tibetan": "ཧ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "a",
+    "variant2": "ah",
+    "tibetan": "ཨ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "ah",
+    "variant2": "a",
+    "tibetan": "ཨ",
+    "similarity": 1.0,
+    "type": "consonant"
+  },
+  {
+    "variant1": "a",
+    "variant2": "ah",
+    "base": "a",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "a",
+    "variant2": "ä",
+    "base": "a",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ah",
+    "variant2": "a",
+    "base": "a",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ah",
+    "variant2": "ä",
+    "base": "a",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ä",
+    "variant2": "a",
+    "base": "a",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ä",
+    "variant2": "ah",
+    "base": "a",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "i",
+    "variant2": "ee",
+    "base": "i",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "i",
+    "variant2": "ih",
+    "base": "i",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ee",
+    "variant2": "i",
+    "base": "i",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ee",
+    "variant2": "ih",
+    "base": "i",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ih",
+    "variant2": "i",
+    "base": "i",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ih",
+    "variant2": "ee",
+    "base": "i",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "u",
+    "variant2": "oo",
+    "base": "u",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "u",
+    "variant2": "ü",
+    "base": "u",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "oo",
+    "variant2": "u",
+    "base": "u",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "oo",
+    "variant2": "ü",
+    "base": "u",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ü",
+    "variant2": "u",
+    "base": "u",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ü",
+    "variant2": "oo",
+    "base": "u",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "e",
+    "variant2": "ay",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "e",
+    "variant2": "é",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "e",
+    "variant2": "ey",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "e",
+    "variant2": "ei",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ay",
+    "variant2": "e",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ay",
+    "variant2": "é",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ay",
+    "variant2": "ey",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ay",
+    "variant2": "ei",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "é",
+    "variant2": "e",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "é",
+    "variant2": "ay",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "é",
+    "variant2": "ey",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "é",
+    "variant2": "ei",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ey",
+    "variant2": "e",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ey",
+    "variant2": "ay",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ey",
+    "variant2": "é",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ey",
+    "variant2": "ei",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ei",
+    "variant2": "e",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ei",
+    "variant2": "ay",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ei",
+    "variant2": "é",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ei",
+    "variant2": "ey",
+    "base": "e",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "o",
+    "variant2": "oh",
+    "base": "o",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "o",
+    "variant2": "ö",
+    "base": "o",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "o",
+    "variant2": "oe",
+    "base": "o",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "oh",
+    "variant2": "o",
+    "base": "o",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "oh",
+    "variant2": "ö",
+    "base": "o",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "oh",
+    "variant2": "oe",
+    "base": "o",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ö",
+    "variant2": "o",
+    "base": "o",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ö",
+    "variant2": "oh",
+    "base": "o",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ö",
+    "variant2": "oe",
+    "base": "o",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "oe",
+    "variant2": "o",
+    "base": "o",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "oe",
+    "variant2": "oh",
+    "base": "o",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "oe",
+    "variant2": "ö",
+    "base": "o",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ö",
+    "variant2": "oe",
+    "base": "ö",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ö",
+    "variant2": "eu",
+    "base": "ö",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ö",
+    "variant2": "o",
+    "base": "ö",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "oe",
+    "variant2": "ö",
+    "base": "ö",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "oe",
+    "variant2": "eu",
+    "base": "ö",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "oe",
+    "variant2": "o",
+    "base": "ö",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "eu",
+    "variant2": "ö",
+    "base": "ö",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "eu",
+    "variant2": "oe",
+    "base": "ö",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "eu",
+    "variant2": "o",
+    "base": "ö",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "o",
+    "variant2": "ö",
+    "base": "ö",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "o",
+    "variant2": "oe",
+    "base": "ö",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "o",
+    "variant2": "eu",
+    "base": "ö",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ü",
+    "variant2": "ue",
+    "base": "ü",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ü",
+    "variant2": "u",
+    "base": "ü",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ue",
+    "variant2": "ü",
+    "base": "ü",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "ue",
+    "variant2": "u",
+    "base": "ü",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "u",
+    "variant2": "ü",
+    "base": "ü",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "u",
+    "variant2": "ue",
+    "base": "ü",
+    "similarity": 1.0,
+    "type": "vowel"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "khyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "khye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "choe",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "cho",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "kyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "kye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "chö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "khyö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "khye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "choe",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "cho",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "kyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "kye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "chö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "khyö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "khyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "choe",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "cho",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "kyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "kye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "chö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "khyö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "khyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "khye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "cho",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "kyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "kye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "chö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "khyö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "khyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "khye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "choe",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "kyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "kye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "chö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "khyö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "khyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "khye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "choe",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "cho",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "kye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "chö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "khyö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "khyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "khye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "choe",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "cho",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "kyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "chö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "khyö",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "khyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "khye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "choe",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "cho",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "kyo",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "kye",
+    "tibetan": "ཁྱོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "khyed",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "khyö",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "che",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "chey",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "kye",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyed",
+    "variant2": "khye",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyed",
+    "variant2": "khyö",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyed",
+    "variant2": "che",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyed",
+    "variant2": "chey",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyed",
+    "variant2": "kye",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "khye",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "khyed",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "che",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "chey",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "kye",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "che",
+    "variant2": "khye",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "che",
+    "variant2": "khyed",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "che",
+    "variant2": "khyö",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "che",
+    "variant2": "chey",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "che",
+    "variant2": "kye",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chey",
+    "variant2": "khye",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chey",
+    "variant2": "khyed",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chey",
+    "variant2": "khyö",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chey",
+    "variant2": "che",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chey",
+    "variant2": "kye",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "khye",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "khyed",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "khyö",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "che",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "chey",
+    "tibetan": "ཁྱེད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "ki",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "ge",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "ke",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "gi",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "ge",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "ke",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ge",
+    "variant2": "gi",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ge",
+    "variant2": "ki",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ge",
+    "variant2": "ke",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ke",
+    "variant2": "gi",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ke",
+    "variant2": "ki",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ke",
+    "variant2": "ge",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "ki",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "gyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "chi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "kye",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "kyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "gyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "chi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "kye",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "kyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "ki",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "chi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "kye",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "kyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "ki",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "gyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "kye",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "kyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "ki",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "gyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "chi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "gi",
+    "tibetan": "གྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "kyi",
+    "tibetan": "གྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "gyi",
+    "tibetan": "གྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "kyi",
+    "tibetan": "གྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "gyi",
+    "tibetan": "གྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "gi",
+    "tibetan": "གྱི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "yi",
+    "variant2": "i",
+    "tibetan": "ཡི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "yi",
+    "variant2": "ye",
+    "tibetan": "ཡི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "i",
+    "variant2": "yi",
+    "tibetan": "ཡི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "i",
+    "variant2": "ye",
+    "tibetan": "ཡི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ye",
+    "variant2": "yi",
+    "tibetan": "ཡི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ye",
+    "variant2": "i",
+    "tibetan": "ཡི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "'i",
+    "variant2": "i",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "'i",
+    "variant2": "e",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "'i",
+    "variant2": "ai",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "i",
+    "variant2": "'i",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "i",
+    "variant2": "e",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "i",
+    "variant2": "ai",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "e",
+    "variant2": "'i",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "e",
+    "variant2": "i",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "e",
+    "variant2": "ai",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ai",
+    "variant2": "'i",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ai",
+    "variant2": "i",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ai",
+    "variant2": "e",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "du",
+    "variant2": "tu",
+    "tibetan": "དུ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "du",
+    "variant2": "ru",
+    "tibetan": "དུ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "tu",
+    "variant2": "du",
+    "tibetan": "དུ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "tu",
+    "variant2": "ru",
+    "tibetan": "དུ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ru",
+    "variant2": "du",
+    "tibetan": "དུ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ru",
+    "variant2": "tu",
+    "tibetan": "དུ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "tu",
+    "variant2": "du",
+    "tibetan": "ཏུ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "du",
+    "variant2": "tu",
+    "tibetan": "ཏུ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "ru",
+    "variant2": "du",
+    "tibetan": "རུ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "du",
+    "variant2": "ru",
+    "tibetan": "རུ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "su",
+    "variant2": "zu",
+    "tibetan": "སུ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "zu",
+    "variant2": "su",
+    "tibetan": "སུ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "cho",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "choe",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "chos",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "chös",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "chö",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "choe",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "chos",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "chös",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "chö",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "cho",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "chos",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "chös",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chos",
+    "variant2": "chö",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chos",
+    "variant2": "cho",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chos",
+    "variant2": "choe",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chos",
+    "variant2": "chös",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chös",
+    "variant2": "chö",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chös",
+    "variant2": "cho",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chös",
+    "variant2": "choe",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "chös",
+    "variant2": "chos",
+    "tibetan": "ཆོས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sangye",
+    "variant2": "sanggye",
+    "tibetan": "སངས་རྒྱས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sangye",
+    "variant2": "sangay",
+    "tibetan": "སངས་རྒྱས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sangye",
+    "variant2": "sange",
+    "tibetan": "སངས་རྒྱས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sanggye",
+    "variant2": "sangye",
+    "tibetan": "སངས་རྒྱས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sanggye",
+    "variant2": "sangay",
+    "tibetan": "སངས་རྒྱས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sanggye",
+    "variant2": "sange",
+    "tibetan": "སངས་རྒྱས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sangay",
+    "variant2": "sangye",
+    "tibetan": "སངས་རྒྱས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sangay",
+    "variant2": "sanggye",
+    "tibetan": "སངས་རྒྱས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sangay",
+    "variant2": "sange",
+    "tibetan": "སངས་རྒྱས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sange",
+    "variant2": "sangye",
+    "tibetan": "སངས་རྒྱས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sange",
+    "variant2": "sanggye",
+    "tibetan": "སངས་རྒྱས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sange",
+    "variant2": "sangay",
+    "tibetan": "སངས་རྒྱས",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "lama",
+    "variant2": "la ma",
+    "tibetan": "བླ་མ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "lama",
+    "variant2": "blama",
+    "tibetan": "བླ་མ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "la ma",
+    "variant2": "lama",
+    "tibetan": "བླ་མ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "la ma",
+    "variant2": "blama",
+    "tibetan": "བླ་མ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "blama",
+    "variant2": "lama",
+    "tibetan": "བླ་མ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "blama",
+    "variant2": "la ma",
+    "tibetan": "བླ་མ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "dorje",
+    "variant2": "dorjé",
+    "tibetan": "རྡོ་རྗེ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "dorje",
+    "variant2": "dorji",
+    "tibetan": "རྡོ་རྗེ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "dorje",
+    "variant2": "vajra",
+    "tibetan": "རྡོ་རྗེ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "dorjé",
+    "variant2": "dorje",
+    "tibetan": "རྡོ་རྗེ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "dorjé",
+    "variant2": "dorji",
+    "tibetan": "རྡོ་རྗེ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "dorjé",
+    "variant2": "vajra",
+    "tibetan": "རྡོ་རྗེ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "dorji",
+    "variant2": "dorje",
+    "tibetan": "རྡོ་རྗེ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "dorji",
+    "variant2": "dorjé",
+    "tibetan": "རྡོ་རྗེ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "dorji",
+    "variant2": "vajra",
+    "tibetan": "རྡོ་རྗེ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "vajra",
+    "variant2": "dorje",
+    "tibetan": "རྡོ་རྗེ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "vajra",
+    "variant2": "dorjé",
+    "tibetan": "རྡོ་རྗེ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "vajra",
+    "variant2": "dorji",
+    "tibetan": "རྡོ་རྗེ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "pema",
+    "variant2": "padma",
+    "tibetan": "པདྨ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "pema",
+    "variant2": "peme",
+    "tibetan": "པདྨ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "pema",
+    "variant2": "péma",
+    "tibetan": "པདྨ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "padma",
+    "variant2": "pema",
+    "tibetan": "པདྨ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "padma",
+    "variant2": "peme",
+    "tibetan": "པདྨ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "padma",
+    "variant2": "péma",
+    "tibetan": "པདྨ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "peme",
+    "variant2": "pema",
+    "tibetan": "པདྨ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "peme",
+    "variant2": "padma",
+    "tibetan": "པདྨ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "peme",
+    "variant2": "péma",
+    "tibetan": "པདྨ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "péma",
+    "variant2": "pema",
+    "tibetan": "པདྨ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "péma",
+    "variant2": "padma",
+    "tibetan": "པདྨ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "péma",
+    "variant2": "peme",
+    "tibetan": "པདྨ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "changchub",
+    "variant2": "jangchub",
+    "tibetan": "བྱང་ཆུབ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "changchub",
+    "variant2": "byang chub",
+    "tibetan": "བྱང་ཆུབ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "changchub",
+    "variant2": "changchup",
+    "tibetan": "བྱང་ཆུབ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "jangchub",
+    "variant2": "changchub",
+    "tibetan": "བྱང་ཆུབ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "jangchub",
+    "variant2": "byang chub",
+    "tibetan": "བྱང་ཆུབ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "jangchub",
+    "variant2": "changchup",
+    "tibetan": "བྱང་ཆུབ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "byang chub",
+    "variant2": "changchub",
+    "tibetan": "བྱང་ཆུབ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "byang chub",
+    "variant2": "jangchub",
+    "tibetan": "བྱང་ཆུབ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "byang chub",
+    "variant2": "changchup",
+    "tibetan": "བྱང་ཆུབ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "changchup",
+    "variant2": "changchub",
+    "tibetan": "བྱང་ཆུབ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "changchup",
+    "variant2": "jangchub",
+    "tibetan": "བྱང་ཆུབ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "changchup",
+    "variant2": "byang chub",
+    "tibetan": "བྱང་ཆུབ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sempa",
+    "variant2": "sempä",
+    "tibetan": "སེམས་དཔའ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sempa",
+    "variant2": "sems dpa",
+    "tibetan": "སེམས་དཔའ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sempä",
+    "variant2": "sempa",
+    "tibetan": "སེམས་དཔའ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sempä",
+    "variant2": "sems dpa",
+    "tibetan": "སེམས་དཔའ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sems dpa",
+    "variant2": "sempa",
+    "tibetan": "སེམས་དཔའ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "sems dpa",
+    "variant2": "sempä",
+    "tibetan": "སེམས་དཔའ",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "bod",
+    "variant2": "pö",
+    "tibetan": "བོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "bod",
+    "variant2": "po",
+    "tibetan": "བོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "bod",
+    "variant2": "böd",
+    "tibetan": "བོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "pö",
+    "variant2": "bod",
+    "tibetan": "བོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "pö",
+    "variant2": "po",
+    "tibetan": "བོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "pö",
+    "variant2": "böd",
+    "tibetan": "བོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "po",
+    "variant2": "bod",
+    "tibetan": "བོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "po",
+    "variant2": "pö",
+    "tibetan": "བོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "po",
+    "variant2": "böd",
+    "tibetan": "བོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "böd",
+    "variant2": "bod",
+    "tibetan": "བོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "böd",
+    "variant2": "pö",
+    "tibetan": "བོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "böd",
+    "variant2": "po",
+    "tibetan": "བོད",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "druk",
+    "variant2": "drug",
+    "tibetan": "འབྲུག",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "druk",
+    "variant2": "dru",
+    "tibetan": "འབྲུག",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "druk",
+    "variant2": "bhutan",
+    "tibetan": "འབྲུག",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "drug",
+    "variant2": "druk",
+    "tibetan": "འབྲུག",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "drug",
+    "variant2": "dru",
+    "tibetan": "འབྲུག",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "drug",
+    "variant2": "bhutan",
+    "tibetan": "འབྲུག",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "dru",
+    "variant2": "druk",
+    "tibetan": "འབྲུག",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "dru",
+    "variant2": "drug",
+    "tibetan": "འབྲུག",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "dru",
+    "variant2": "bhutan",
+    "tibetan": "འབྲུག",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "bhutan",
+    "variant2": "druk",
+    "tibetan": "འབྲུག",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "bhutan",
+    "variant2": "drug",
+    "tibetan": "འབྲུག",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "bhutan",
+    "variant2": "dru",
+    "tibetan": "འབྲུག",
+    "similarity": 1.0,
+    "type": "word"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "ki",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "ge",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "gi",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "ge",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ge",
+    "variant2": "gi",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ge",
+    "variant2": "ki",
+    "tibetan": "གི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "ki",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "chi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "kye",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "gyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "kyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "chi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "kye",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "gyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "kyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "ki",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "kye",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "gyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "kyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "ki",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "chi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "gyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "kyi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "ki",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "chi",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "kye",
+    "tibetan": "ཀྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "gi",
+    "tibetan": "གྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "kyi",
+    "tibetan": "གྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "gyi",
+    "tibetan": "གྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "kyi",
+    "tibetan": "གྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "gyi",
+    "tibetan": "གྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "gi",
+    "tibetan": "གྱི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "yi",
+    "variant2": "i",
+    "tibetan": "ཡི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "yi",
+    "variant2": "ye",
+    "tibetan": "ཡི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "i",
+    "variant2": "yi",
+    "tibetan": "ཡི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "i",
+    "variant2": "ye",
+    "tibetan": "ཡི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ye",
+    "variant2": "yi",
+    "tibetan": "ཡི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ye",
+    "variant2": "i",
+    "tibetan": "ཡི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "'i",
+    "variant2": "i",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "'i",
+    "variant2": "e",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "'i",
+    "variant2": "ai",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "i",
+    "variant2": "'i",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "i",
+    "variant2": "e",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "i",
+    "variant2": "ai",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "e",
+    "variant2": "'i",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "e",
+    "variant2": "i",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "e",
+    "variant2": "ai",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ai",
+    "variant2": "'i",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ai",
+    "variant2": "i",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ai",
+    "variant2": "e",
+    "tibetan": "འི",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gis",
+    "variant2": "kis",
+    "tibetan": "གིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gis",
+    "variant2": "gi",
+    "tibetan": "གིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kis",
+    "variant2": "gis",
+    "tibetan": "གིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kis",
+    "variant2": "gi",
+    "tibetan": "གིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "gis",
+    "tibetan": "གིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "kis",
+    "tibetan": "གིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kyis",
+    "variant2": "kis",
+    "tibetan": "ཀྱིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kyis",
+    "variant2": "chis",
+    "tibetan": "ཀྱིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kis",
+    "variant2": "kyis",
+    "tibetan": "ཀྱིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "kis",
+    "variant2": "chis",
+    "tibetan": "ཀྱིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "chis",
+    "variant2": "kyis",
+    "tibetan": "ཀྱིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "chis",
+    "variant2": "kis",
+    "tibetan": "ཀྱིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gyis",
+    "variant2": "gis",
+    "tibetan": "གྱིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "gis",
+    "variant2": "gyis",
+    "tibetan": "གྱིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "yis",
+    "variant2": "is",
+    "tibetan": "ཡིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "is",
+    "variant2": "yis",
+    "tibetan": "ཡིས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "s",
+    "variant2": "se",
+    "tibetan": "ས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "se",
+    "variant2": "s",
+    "tibetan": "ས",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "tu",
+    "variant2": "du",
+    "tibetan": "ཏུ",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "du",
+    "variant2": "tu",
+    "tibetan": "ཏུ",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "du",
+    "variant2": "tu",
+    "tibetan": "དུ",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "du",
+    "variant2": "ru",
+    "tibetan": "དུ",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "tu",
+    "variant2": "du",
+    "tibetan": "དུ",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "tu",
+    "variant2": "ru",
+    "tibetan": "དུ",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ru",
+    "variant2": "du",
+    "tibetan": "དུ",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ru",
+    "variant2": "tu",
+    "tibetan": "དུ",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "ru",
+    "variant2": "du",
+    "tibetan": "རུ",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "du",
+    "variant2": "ru",
+    "tibetan": "རུ",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "su",
+    "variant2": "zu",
+    "tibetan": "སུ",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "zu",
+    "variant2": "su",
+    "tibetan": "སུ",
+    "similarity": 1.0,
+    "type": "particle"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "khyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "khye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "choe",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "cho",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "kyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "kye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyö",
+    "variant2": "chö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "khyö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "khye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "choe",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "cho",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "kyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "kye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khyo",
+    "variant2": "chö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "khyö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "khyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "choe",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "cho",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "kyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "kye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "khye",
+    "variant2": "chö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "khyö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "khyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "khye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "cho",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "kyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "kye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "choe",
+    "variant2": "chö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "khyö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "khyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "khye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "choe",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "kyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "kye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "cho",
+    "variant2": "chö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "khyö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "khyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "khye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "choe",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "cho",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "kye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kyo",
+    "variant2": "chö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "khyö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "khyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "khye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "choe",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "cho",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "kyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "kye",
+    "variant2": "chö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "khyö",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "khyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "khye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "choe",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "cho",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "kyo",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "chö",
+    "variant2": "kye",
+    "meaning": "you/your",
+    "tibetan": "ཁྱོད",
+    "similarity": 0.9,
+    "type": "cross_dialect"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "ki",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "kyi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "gyi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "chi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "yi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "gi",
+    "variant2": "i",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "gi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "kyi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "gyi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "chi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "yi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "ki",
+    "variant2": "i",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "gi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "ki",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "gyi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "chi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "yi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "kyi",
+    "variant2": "i",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "gi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "ki",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "kyi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "chi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "yi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "gyi",
+    "variant2": "i",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "gi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "ki",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "kyi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "gyi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "yi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "chi",
+    "variant2": "i",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "yi",
+    "variant2": "gi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "yi",
+    "variant2": "ki",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "yi",
+    "variant2": "kyi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "yi",
+    "variant2": "gyi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "yi",
+    "variant2": "chi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "yi",
+    "variant2": "i",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "i",
+    "variant2": "gi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "i",
+    "variant2": "ki",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "i",
+    "variant2": "kyi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "i",
+    "variant2": "gyi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "i",
+    "variant2": "chi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  },
+  {
+    "variant1": "i",
+    "variant2": "yi",
+    "meaning": "genitive_particle",
+    "similarity": 0.8,
+    "type": "particle_variant"
+  }
+]

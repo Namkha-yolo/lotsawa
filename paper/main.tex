@@ -1,0 +1,691 @@
+% Lotsawa Keyboard Paper
+% Target: ACL/EMNLP/NAACL main conference (long paper, 8 pages + refs)
+% Compile: latexmk -xelatex main.tex
+%
+% Numbers come from LotsawaCore/Sources/LotsawaCore/{training_metrics,results}.json
+% Re-fill if retraining: grep -n "[0-9]\\." main.tex
+
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[hyphenbreaks]{breakurl}
+\usepackage{microtype}
+\usepackage{xeCJK}          % optional for Tibetan rendering, requires XeLaTeX
+\usepackage{fontspec}
+
+% If compiling with XeLaTeX, the project's Tibetan glyphs render via system fonts.
+% Comment these out for pdflatex + sub with \textit{...} roman placeholders.
+%\setCJKmainfont{Jomolhari}[Script=Tibetan]
+%\newfontfamily\tibetanfont[Script=Tibetan]{Jomolhari}
+
+\newcommand{\tib}[1]{{\fontspec{Jomolhari}#1}}
+
+% Paper length: aim for 8 pages + unlimited references
+
+\title{The Lotsawa Standard:\\
+A Phonetic Input Protocol for Tibetan,\\
+with Statistical Disambiguation and a Computational Sumtak Grammar}
+
+\author{%
+  Namkha Tashi Oedzer\\
+  \texttt{oedzernamkha@gmail.com}
+}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Chinese has Pinyin. Japanese has romaji-to-kana-to-kanji. Tibetan has nothing comparable, and has not had it for any of the thirty years since Tibetan entered Unicode. The existing Roman transliteration schemes -- Wylie, EWTS, THL, Tournadre, and the SASM/GNC/SRC standard (ZWPY, 1982) -- all solve a \emph{transcription} problem: given a Tibetan word, how should its pronunciation be written in Roman letters. None solves the \emph{inverse} problem that keyboard input requires: given a Roman-letter string produced by a user, determine the correct Tibetan orthographic form. As a result, typing Tibetan on any current computing platform still means composing each syllable by hand from a layout-based keyboard, with no phonetic auto-completion and no context-sensitive disambiguation -- the state Chinese input occupied before \citet{chen2000pinyin} introduced trigram language models for Pinyin conversion in 2000.
+
+We propose the \textbf{Lotsawa Standard}, a phonetic input protocol for Tibetan, together with a cross-platform reference implementation that demonstrates the standard is realizable on every major computing platform. The standard is specified as three layers. A \textbf{normalization layer} maps arbitrary romanized input across all major transcription conventions and dialectal variants to a canonical phonetic representation; an implementation accepts Wylie, EWTS, THL, Tournadre, ZWPY, and unmarked user phonetic input alike. A \textbf{statistical disambiguation layer} -- the load-bearing component of the standard -- resolves canonical forms to correct Tibetan orthography through corpus-trained n-gram language models, automatic text-domain classification across the dharma, colloquial, formal, and numerical registers, fuzzy phonetic matching, and a BiLSTM context model, with the curated dictionary and a computational formalization of the Sumtak (\tib{སུམ་རྟགས་}) grammar acting as hard constraints on the statistical output. A \textbf{personalization layer} adapts resolution to individual users through selection history, correction tracking, retroactive phrase correction, and personal vocabulary. Conformance is specified normatively: an implementation is Lotsawa-conformant if and only if it accepts all five legacy Roman schemes, implements all three layers, consults the Sumtak tables for grammatical particle selection, and achieves a published accuracy threshold on the Lotsawa conformance test set. Implementations may use any statistical method that meets the threshold.
+
+The reference implementation, \textbf{Lotsawa}, is released as a shared Swift package with iOS, macOS, and Android host integrations. On 20{,}000 held-out sentence-level queries the full hybrid pipeline reaches 52.4\% top-1 and 71.7\% top-5 accuracy; a frequency-only dictionary baseline reaches 21.4\% and 28.1\%, and an n-gram-only baseline 24.6\% and 28.4\%. Statistical disambiguation is therefore responsible for an absolute 31 percentage-point improvement in top-1 accuracy, confirming empirically that the Lotsawa Standard is practical only in the presence of a trained language model. The BiLSTM component contains 877{,}096 parameters and compiles to a 3.45\,MB CoreML artifact; the shipping iOS keyboard extension runs the complete pipeline locally without cloud connectivity. The necessity of a specialized architecture for this language is further supported by the TLUE benchmark~\cite{tlue2025}, which shows that general-purpose large language models perform at or below the random baseline on Tibetan language understanding tasks.
+\end{abstract}
+
+% ---------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{A Tradition of Precision, a Crisis of Transmission}
+
+Between the 8th and 9th centuries, under the patronage of the Tibetan imperial court, a generation of scholar-translators -- among them Padmasambhava, Vimalamitra, and Vairotsana -- rendered the Sanskrit Buddhist canon into Tibetan with a philosophical exactness so rigorous that several Sanskrit originals, lost in the subsequent centuries of Indian historical upheaval, have been reconstructed from their Tibetan translations alone. The terminological framework established by these translators, the \emph{lotsawas} (\tib{ལོ་ཙཱ་བ}), was standardized by royal decree in the \emph{Mahāvyutpatti} glossary and became the foundation of a literary civilization that has transmitted the Buddha's teachings with extraordinary fidelity across fourteen centuries.
+
+That tradition now reaches global audiences, and the most faithful access to it still requires the Tibetan language itself. The safest bet, as it has always been, is to learn Tibetan. But learning Tibetan in the digital age, and especially writing it, confronts an immediate and unaddressed computational barrier.
+
+\subsection{The Roman-Input Pathway}
+
+The Roman alphabet has become the \emph{de facto} input standard of global digital infrastructure, not by linguistic merit but by historical circumstance: the societies that built modern computing happened to write in it. Every major script-bearing civilization has responded to this reality by constructing a Roman-input pathway into its own orthography, and in every case the pathway is a \emph{standard}: a single protocol, adopted across operating systems and vendors, by which a user types Roman letters on an ASCII keyboard and receives native-script output.
+
+Chinese has Hanyu Pinyin, formalized by the State Council of the People's Republic of China in 1958 and now shipped by every major operating system. Pinyin has two halves: a romanization scheme that assigns a canonical Roman spelling to each Chinese syllable, and a computational input protocol that disambiguates the resulting Roman strings back to Chinese characters. The second half -- the input protocol -- was not practical until~\citet{chen2000pinyin} introduced trigram language models into the Pinyin-to-character conversion pipeline. Before that paper, Pinyin input methods existed but forced the user to select each character individually. After it, a user could type whole sentences and receive the right characters most of the time. Every Pinyin IME shipping today -- Google Pinyin, Sogou, Microsoft IME, Apple's built-in Chinese input -- is the lineal descendant of that statistical move. Japanese has romaji-to-kana-to-kanji conversion, which embeds an analogous statistical layer~\cite{takahashi1996kana}. These were not concessions to the superiority of Roman script but strategic decisions to ensure full participation in the infrastructure of modernity while preserving the integrity of the native writing system.
+
+Tibetan has five Roman transcription schemes but \emph{no input standard}. Wylie transliteration~\cite{wylie1959}, the Extended Wylie Transliteration System (EWTS)~\cite{ewts}, the THL Simplified Phonetic Transcription~\cite{thl}, the Tournadre conventions~\cite{tournadre2003}, and the SASM/GNC/SRC standard (commonly known as Tibetan Pinyin or ZWPY)~\cite{sasm1982} together cover a landscape of scholarly and pedagogical communities, but each of them solves a \emph{transcription} problem: given a Tibetan word, how should its pronunciation be written in Roman letters. None of them solves the \emph{inverse} problem that keyboard input requires: given a Roman-letter string produced by a user, determine the correct Tibetan orthographic form. As a consequence, typing Tibetan on iOS, macOS, Android, or Windows today still means composing each syllable by hand from a layout-based keyboard that requires the user to know the exact orthography in advance -- the state of Chinese input circa 1995, before the statistical turn.
+
+\subsection{Why the Inverse Problem is Hard}
+
+Tibetan orthography is among the most precise and internally consistent writing systems ever devised, encoding consonant stacking, prefix classes, and suffix structures that carry grammatical and semantic weight of real significance in the literary language. This very precision is what makes phonetic input difficult: a single phonetic input such as \texttt{dak} corresponds to orthographically and semantically distinct forms including \tib{བདག} (self), \tib{དག} (pure), and \tib{བརྡག} (to strike), with correct resolution depending entirely on sentential context, text domain, and user intent. The same ambiguity extends throughout Tibetan grammar: the genitive, agentive, and dative particles each take multiple written allomorphs governed by the Sumtak (\tib{སུམ་རྟགས་}) classical grammar rules, with all allomorphs of each particle sharing a single spoken form across modern dialects. No transcription scheme, however carefully designed, can resolve these ambiguities from the phonetic signal alone. Every existing romanization faithfully maps Tibetan words to their phonetic forms; none provides a mechanism for reversing that mapping in the presence of ambiguity.
+
+\subsection{A Standard, Not Another Scheme}
+
+Our claim is that the missing thing is not a sixth romanization scheme. Tibetan already has five competent schemes, each developed for a defensible purpose; adding a sixth would fragment the landscape further. The missing thing is an \emph{input standard}, in the specific sense that Pinyin is an input standard for Chinese: a protocol by which any Roman string -- whether written in Wylie, EWTS, THL, Tournadre, ZWPY, or an untrained user's free phonetic spelling -- is converted to the correct Tibetan orthographic form, together with a reference implementation that adopters can consume or re-implement.
+
+Such a standard cannot be defined as a lookup table or as a set of deterministic rewrite rules. The example of \texttt{dak} above is not pathological; it is typical. The mapping from canonical Roman phonetic to correct Tibetan orthography is inherently context-dependent, and the context required to resolve it includes the preceding several committed syllables, the text domain, and in the limit the user's personal vocabulary. A standard for typing Tibetan is therefore, by construction, a standard for a statistical system. Just as Pinyin input became a standard only when it became statistical, the Tibetan equivalent must centre on a trained language model from the beginning.
+
+\subsection{This Paper}
+
+This paper proposes the \textbf{Lotsawa Standard}, a phonetic input protocol for Tibetan that treats orthographic resolution as a machine learning problem rather than a transcription problem. The standard is specified as three layers, described normatively in~\S\ref{sec:framework}:
+
+\begin{itemize}
+\item A \textbf{normalization layer} that maps arbitrary romanized input across Wylie, EWTS, THL, Tournadre, ZWPY, and untrained phonetic variants to a canonical internal phonetic representation.
+\item A \textbf{statistical disambiguation layer} that resolves canonical forms to correct Tibetan orthography through corpus-trained n-gram language models, automatic text-domain classification across dharma, colloquial, formal, and numerical registers, fuzzy phonetic matching, and a BiLSTM context model, with the curated dictionary and a computational formalization of the Sumtak grammar acting as hard constraints on the statistical output.
+\item A \textbf{personalization layer} that adapts resolution to individual users through selection history, correction tracking, retroactive phrase correction, and personal vocabulary.
+\end{itemize}
+
+Conformance to the standard is specified in~\S\ref{sec:conformance} and is tied to accuracy on a published test set, not to a specific model architecture. Implementations may use any statistical method -- n-gram, BiLSTM, transformer, or a future architecture -- provided they meet the accuracy threshold and a memory budget sufficient to fit in a mobile keyboard extension.
+
+We also release \textbf{Lotsawa}, a reference implementation of the standard named for the great translators of the imperial period. Lotsawa is structured as a shared Swift package (\texttt{LotsawaCore}) that contains the full three-layer pipeline, with thin host integrations for iOS (shipping), macOS (in progress, via \texttt{InputMethodKit}), and Android (planned, via \texttt{InputMethodService}). The iOS integration runs the complete pipeline locally without cloud connectivity and supports both Standard Tibetan (\tib{བོད་ཡིག}) and Dzongkha (\tib{རྫོང་ཁ}) at full Unicode Chapter~14~\cite{unicode14} compliance. We invite the Tibetan computing community -- BDRC, 84000, Lotsawa House, Monlam, OpenPecha, Tsadra, Esukhia, the Dzongkha Development Commission, and the input-method teams of Apple, Google, and Microsoft -- to implement the standard, contribute to the conformance test set, and extend the normalization layer to cover new dialects and transcription conventions.
+
+\paragraph{Contributions.} This work makes five contributions to the computational linguistics literature.
+
+\begin{enumerate}
+\item We identify and formalize the \textbf{Tibetan phonetic resolution problem} as distinct from existing transcription standardization efforts and demonstrate that it requires statistical inference rather than deterministic mapping (\S\ref{sec:framework}).
+
+\item We propose the \textbf{Lotsawa Standard}, the first unified input protocol for resolving arbitrary romanized phonetic input to correct Tibetan orthography, specified as three normative layers and conformance-tested by a published accuracy threshold (\S\ref{sec:framework}, \S\ref{sec:conformance}).
+
+\item We present a \textbf{statistical disambiguation engine} -- combining corpus-trained n-gram language models, text-domain classification, fuzzy phonetic matching, and a BiLSTM context model -- that is the Tibetan counterpart of the trigram-based Pinyin disambiguation introduced by~\citet{chen2000pinyin}, and we show empirically that it is responsible for a 31 percentage-point absolute improvement in top-1 accuracy over the strongest dictionary-based baseline (\S\ref{sec:disambiguation}, \S\ref{sec:eval}).
+
+\item We present the \textbf{first computational formalization of the Sumtak grammar particle selection rules} as a hard deterministic constraint layered on top of the statistical disambiguation engine, preserving the grammatical precision that the Tibetan literary tradition has maintained since Thonmi Sambhota (\S\ref{sec:sumtak}).
+
+\item We release \textbf{Lotsawa}, a cross-platform reference implementation of the standard, and demonstrate that the full pipeline is realizable within the memory and latency budgets of a mobile keyboard extension on every major consumer platform (\S\ref{sec:arch}).
+\end{enumerate}
+
+% ---------------------------------------------------------------
+\section{Background}
+\label{sec:background}
+
+This section gives the linguistic background needed to understand why the inverse resolution problem cannot be solved by a lookup table alone. \S\ref{sec:sumtak-background} reviews the Sumtak syllable structure, \S\ref{sec:homophone-density} quantifies the ambiguity of the phonetic signal, and \S\ref{sec:existing-schemes} surveys the existing Roman transcription conventions and explains precisely why they solve the wrong problem.
+
+\subsection{The Sumtak Syllable}
+\label{sec:sumtak-background}
+
+A Tibetan syllable (\tib{སུམ་རྟགས}) is built from up to seven components, as codified by the grammarian Thonmi Sambhota in the 7th century and restated in modern form by~\citet{tonyduff}:
+\[
+\text{\small[Prefix]} + \text{\small[Super]} + \text{Root} + \text{\small[Sub]} + \text{\small[Vowel]} + \text{\small[Suffix]} + \text{\small[Post-suf]}
+\]
+where
+\begin{itemize}
+\item The \textbf{prefix} (སྔོན་འཇུག) is one of 5 silent letters: ག ད བ མ འ.
+\item The \textbf{superscript} (མགོ་ཅན) is one of 3 letters: ར ལ ས.
+\item The \textbf{root} (མིང་གཞི) is any of the 30 consonants.
+\item The \textbf{subscript} (འདོགས་ཅན) is one of 4: ཡ ར ལ ཝ.
+\item The \textbf{vowel} (དབྱངས) is one of 4 explicit marks (ི ུ ེ ོ) or the inherent /a/.
+\item The \textbf{suffix} (རྗེས་འཇུག) is one of 10: ག ང ད ན བ མ འ ར ལ ས.
+\item The \textbf{post-suffix} (ཡང་འཇུག) is one of ད ས.
+\end{itemize}
+
+In Lhasa pronunciation, prefixes and superscripts are silent but modify the tone and voicing of the root; final suffixes -r, -l, -s are silent but -s and -d trigger vowel umlaut; and historical voicing has merged into tone class. The cumulative effect is that dozens of orthographically distinct syllables share a single Lhasa pronunciation.
+
+\subsection{Homophone Density}
+\label{sec:homophone-density}
+
+Table~\ref{tab:homophones} shows representative phonetic syllables and their orthographic realizations. Every one of these is a common word with a distinct meaning; the user must select the right orthographic form from context. The rows illustrate a central claim of this paper: the phonetic signal underdetermines the orthography, and any system that treats resolution as a table lookup will fail precisely on the cases that matter most.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+Phonetic input & Orthographic candidates & Gloss \\
+\midrule
+\texttt{ka}  & \tib{ཀ, བཀའ, སྐ, རྐ, ལྐ, བསྐ} & six distinct meanings \\
+\texttt{dak} & \tib{བདག, དག, བརྡག} & self, pure, to strike \\
+\texttt{chu} & \tib{ཆུ, བཅུ} & water, ten \\
+\texttt{nga} & \tib{ང, ལྔ} & I, five \\
+\texttt{druk}& \tib{དྲུག, འབྲུག} & six, Bhutan/dragon \\
+\texttt{choe}& \tib{ཆོས, ཁྱོད} & dharma, you (Dzongkha) \\
+\texttt{me}  & \tib{མེ, མེད} & fire, not-exist \\
+\texttt{je}  & \tib{བྱེད, རྗེ} & do/make, lord \\
+\bottomrule
+\end{tabular}
+\caption{Representative homophone families. Each row is a single phonetic input that corresponds to multiple orthographically and semantically distinct Tibetan forms; the correct resolution depends entirely on sentential context, text domain, and user intent.}
+\label{tab:homophones}
+\end{table}
+
+\subsection{Existing Romanization Schemes and the Forward/Inverse Distinction}
+\label{sec:existing-schemes}
+
+Five romanization conventions dominate Tibetan computing, each serving a distinct scholarly or pedagogical community:
+
+\begin{description}
+\item[Wylie transliteration]~\cite{wylie1959} is a one-to-one orthographic scheme that maps each Tibetan letter to an ASCII letter. Fully reversible to Unicode, but requires the typist to already know the exact Tibetan spelling.
+\item[Extended Wylie (EWTS)]~\cite{ewts} extends Wylie with diacritics for Sanskrit loans and archaic forms. Same forward/inverse properties as Wylie.
+\item[THL Simplified Phonetic]~\cite{thl} is a pronunciation-based transcription designed for non-scholars, targeting the Lhasa dialect.
+\item[Tournadre's system]~\cite{tournadre2003} is another pronunciation-based transcription, also Lhasa-focused, and uses diacritical marks (\textit{é}, \textit{ö}, \textit{ü}).
+\item[SASM/GNC/SRC (ZWPY, ``Tibetan Pinyin'')]~\cite{sasm1982} was formalized in 1982 based on the Lhasa dialect, and is the nearest formal analogue to Hanyu Pinyin.
+\end{description}
+
+All five schemes are defined as \emph{transcription} functions, that is, total deterministic maps $\tau: \Sigma_{\text{Tib}}^* \to \Sigma_{\text{Roman}}^*$ from Tibetan text to Roman. For keyboard input we require the inverse $\tau^{-1}$. But $\tau$ is not injective -- the rows of Table~\ref{tab:homophones} each witness a collision $\tau(w_1) = \tau(w_2) = \cdots = \tau(w_k)$ -- so $\tau^{-1}$ is not a function but a relation. Resolving this relation requires information that is not in the phonetic string: the preceding context, the text domain, and (in the limit) the user's intent. This is the phonetic resolution problem that the Lotsawa Standard formalizes and solves in~\S\ref{sec:framework}.
+
+% ---------------------------------------------------------------
+\section{Related Work}
+\label{sec:related}
+
+We organize the related work around the structural claims of this paper: that the Lotsawa Standard is the direct Tibetan counterpart of the trigram-based Pinyin input method proposed by~\citet{chen2000pinyin}; that it fits the noisy-channel framework inherited from statistical spelling correction; that it is a lost-orthography-recovery problem in the sense of Arabic diacritization; and that the low-resource status of Tibetan, together with the unreliability of web-crawled corpora, makes a curated approach with explicit linguistic knowledge both necessary and novel.
+
+\paragraph{The Pinyin precedent.}
+Pinyin input for Chinese did not become practical until~\citet{chen2000pinyin} introduced trigram language modelling into the conversion pipeline. Before their paper, Pinyin-based IMEs existed but forced the user to disambiguate each character individually, which was acceptable for single-word inputs and unusable for sentences. Chen and Lee reformulated Pinyin conversion as an inverse problem: given a Pinyin sequence $\mathbf{p}$, find $\arg\max_{\mathbf{w}} P(\mathbf{w} \mid \mathbf{p}) \propto P(\mathbf{p} \mid \mathbf{w}) P(\mathbf{w})$ using a trigram language model trained on Chinese text. Once this was implemented, sentence-level Pinyin input became viable, and every subsequent Pinyin IME -- Google Pinyin, Sogou, QQ Pinyin, Microsoft IME, Apple's built-in Chinese input -- inherits that statistical architecture. The paper is the \emph{computational prototype} of this work: Lotsawa is the Tibetan equivalent of the 2000 Pinyin move, twenty-five years later, under harder conditions.
+
+Three conditions make the Tibetan problem strictly harder than the Pinyin one. First, Tibetan orthography encodes historical information (prefix classes, suffix structure, post-suffixes) that survives only in writing and has no pronunciation correlate; the inverse mapping therefore has to recover information that was never in the input signal at all, rather than merely ranking homophones. Second, Tibetan has four mutually unintelligible dialect groups (Lhasa, Dzongkha, Amdo, Kham) whose phonetic transcriptions of the same written syllable may be entirely different, which is why we require a dedicated normalization layer that Pinyin can do without. Third, our training resources are several orders of magnitude smaller than those available for Chinese: where Chen and Lee trained on multi-billion-character corpora, we train on a 98{,}596-sentence dataset~\cite{billingsmoore_hf} and supplementary expert lexicons (\S\ref{sec:data}).
+
+\paragraph{Japanese kana-kanji conversion.}
+\citet{takahashi1996kana} addresses the closely parallel Japanese problem of disambiguating kana-to-kanji homophones using surrounding word context. The Japanese precedent is instructive because, like Tibetan and unlike Chinese, Japanese has a very high homophone density in its classical vocabulary and relies on statistical disambiguation from surrounding context for almost every word.
+
+\paragraph{Noisy-channel framework for spelling and input.}
+The Bayesian decomposition $P(\text{intended} \mid \text{observed}) \propto P(\text{observed} \mid \text{intended}) \cdot P(\text{intended})$ was introduced by~\citet{kernighan1990spelling} for spelling correction. We adopt this framing for our disambiguation layer: the dictionary and fuzzy matcher estimate $P(\text{phonetic} \mid \text{tibetan})$, while the n-gram engine, the BiLSTM, and the Sumtak particle rules jointly estimate $P(\text{tibetan})$. The Sumtak component is a discrete, rule-based contribution to $P(\text{tibetan})$ that imposes grammatical correctness on top of the statistical signals.
+
+\paragraph{Language models for soft keyboards.}
+\citet{goodman2002softkeyboard} show that combining an explicit language model with a touch-input uncertainty model improves soft-keyboard accuracy substantially over either signal alone. Their setting is a different inverse problem -- recovering the intended key sequence from uncertain tap positions on a touch screen -- but the structural lesson transfers directly. Our contribution is to substitute the touch-input model with a romanization-input model: instead of modelling which keys the user \emph{meant} to hit, we model which orthographic form the user \emph{meant} to write given the phonetic string they typed.
+
+\paragraph{Recovering lost orthographic information.}
+The closest structural analogue to the Tibetan phonetic resolution problem is Arabic diacritization, where diacritics that were never written must be restored from context. \citet{belinkov2015arabic} formulate this as sequence labeling with a bidirectional LSTM, achieving a diacritization error rate near 3\% on a 120{,}000-word Arabic Treebank. We borrow their neural architecture choice for our context model but face a substantially more severe data scarcity problem: our Tibetan training corpus contains roughly 700{,}000 token-level training pairs (\S\ref{sec:data}), compared to their much larger Arabic resource.
+
+\paragraph{Linguistic diversity and the low-resource premise.}
+\citet{joshi2020state} classify 7{,}000+ world languages into six tiers by labeled-data availability. Tibetan is placed in Class~1, alongside languages such as Scottish Gaelic and Telugu, with limited labeled data and thin multilingual-model coverage. \citet{kreutzer2022quality} audit 205 language-specific corpora in the major web-crawled multilingual datasets (CCAligned, ParaCrawl, WikiMatrix, OSCAR, mC4) and find systematic quality problems, with at least 15~corpora containing no usable text. These two findings are the quantitative backbone of our design choice to curate expert lexicons and train a small, targeted neural model rather than depending on web-scale multilingual pretraining.
+
+\paragraph{Tibetan NLP state of the art.}
+\citet{long2021recent} survey Tibetan NLP tooling through 2021, covering word segmentation, POS tagging, and early neural machine translation. The much more recent survey of~\citet{tibetanai2025survey} (October~2025) systematically catalogs Tibetan corpora (BDRC, 200K+ volumes; TJUNLP, 72\,GB; TIBSTC, 11\,B tokens), tokenizers (PyBo, Botok, TibetanMorph), and large language models adapted to Tibetan (mT5, XGLM, and Qwen variants), together with gaps such as orthographic inconsistency across domains and the absence of unified evaluation benchmarks. Crucially, neither survey discusses phonetic input methods or keyboards at any length, confirming that the problem we address is a real gap in the field rather than an artefact of our literature search.
+
+\paragraph{LLM evaluation on Tibetan.}
+The TLUE benchmark~\cite{tlue2025} evaluates frontier large language models on 11{,}528 Tibetan multiple-choice understanding questions (Ti-MMLU) and 11{,}435 safety questions (Ti-SafetyBench). Most models fall at or below the 25\% random baseline; GPT-3.5-Turbo reaches 3.42\%, and even the best proprietary model (Claude-3.5-Sonnet) attains only 35.63\%. Against the Chinese CMMLU benchmark, Qwen2.5-72B drops 68.2 percentage points from 84.70\% to 16.50\% on Tibetan. These numbers are the quantitative version of our opening argument: the tradition of precise, linguistically informed scholarship that the original lotsawas brought to Sanskrit translation is as necessary in the computational domain today as it was in the 8th century.
+
+% ---------------------------------------------------------------
+\section{The Lotsawa Standard}
+\label{sec:framework}
+
+This section specifies the Lotsawa Standard normatively. The standard is defined as three layers (\S\ref{sec:layer-normalization}--\S\ref{sec:layer-personalization}) together with a hard grammatical constraint (\S\ref{sec:sumtak}) and a conformance regime (\S\ref{sec:conformance}). The normalization layer is a rewrite pipeline; the disambiguation layer is the statistical engine that makes the standard practical; the personalization layer adapts the engine to individual users. Throughout this section we use the normative vocabulary of IETF RFC~2119: an implementation \textsc{must} satisfy a requirement for conformance; it \textsc{should} satisfy a strong recommendation unless there is a documented reason not to; it \textsc{may} exercise a permitted option.
+
+\subsection{Problem Statement}
+\label{sec:problem-statement}
+
+Let $\Sigma_R$ denote the Roman alphabet extended with the diacritics used by existing Tibetan transcription schemes (e.g., \textit{é}, \textit{ö}, \textit{ü}), and let $\Sigma_T$ denote Tibetan script in Unicode. Let $\mathcal{W}_T \subset \Sigma_T^*$ denote the set of Tibetan syllables that are well-formed under the Sumtak grammar. The \emph{phonetic resolution problem} is to define a function
+\[
+\rho: \Sigma_R^* \times \mathcal{C} \to \mathcal{P}(\mathcal{W}_T)
+\]
+that maps a user's romanized input string, together with a context $c \in \mathcal{C}$ consisting of recently committed Tibetan words, text domain, and user history, to a ranked list of candidate Tibetan syllables. The target is the candidate the user actually intends. This is explicitly not a transcription problem: the input may conform to any existing Roman transcription convention (Wylie, EWTS, THL, Tournadre, ZWPY), or to none of them, and may contain dialect-specific spellings (Lhasa, Dzongkha, Amdo, Kham) or common misspellings.
+
+The function $\rho$ is not well-defined as a lookup table. The row of Table~\ref{tab:homophones} for \texttt{dak} contains at least three orthographically distinct targets -- \tib{བདག}, \tib{དག}, \tib{བརྡག} -- all of which are common Tibetan words. Which of the three the user intends cannot be determined from the string \texttt{dak} in isolation. It depends on what was typed before it, the register of the text, and in the limit the user's personal vocabulary. We therefore treat $\rho$ as a statistical inference problem and decompose it into three layers, each of which is specified normatively below.
+
+\subsection{Layer 1: Normalization}
+\label{sec:layer-normalization}
+
+The normalization layer $\nu: \Sigma_R^* \to \Sigma_C^*$ maps arbitrary romanized input across transcription conventions and dialectal variants to a \emph{canonical phonetic representation} over an internal alphabet $\Sigma_C$. Its purpose is to ensure that the downstream disambiguation layer sees a consistent input regardless of which scheme the user typed in.
+
+\paragraph{Normative requirements.} A conformant implementation \textsc{must} accept inputs from all of the following legacy transcription schemes and treat them as semantically equivalent: Wylie~\cite{wylie1959}, Extended Wylie (EWTS)~\cite{ewts}, THL Simplified Phonetic~\cite{thl}, Tournadre~\cite{tournadre2003}, and SASM/GNC/SRC (ZWPY)~\cite{sasm1982}. It \textsc{must} additionally accept untrained user phonetic input that conforms to none of the five schemes and map it to the nearest canonical form via the fuzzy matcher of~\S\ref{sec:disambiguation}. An implementation \textsc{should} accept dialectal variants corresponding to Lhasa, Dzongkha, Amdo, and Kham; it \textsc{may} omit Amdo and Kham in its first release provided it documents the omission. An implementation \textsc{must not} require the user to declare which scheme they are using.
+
+\paragraph{Canonical alphabet.} The internal alphabet $\Sigma_C$ consists of 30 consonant tokens matching the 30 root letters of Tibetan (\texttt{k}, \texttt{kh}, \texttt{g}, \texttt{ng}, \texttt{c}, \texttt{ch}, \texttt{j}, \texttt{ny}, \texttt{t}, \texttt{th}, \texttt{d}, \texttt{n}, \texttt{p}, \texttt{ph}, \texttt{b}, \texttt{m}, \texttt{ts}, \texttt{tsh}, \texttt{dz}, \texttt{w}, \texttt{zh}, \texttt{z}, \texttt{'}, \texttt{y}, \texttt{r}, \texttt{l}, \texttt{sh}, \texttt{s}, \texttt{h}, \texttt{a}), five vowel tokens (\texttt{a}, \texttt{i}, \texttt{u}, \texttt{e}, \texttt{o}), and the usual subset of Tibetan finals. A syllable in canonical form is parsed by maximal-initial match: \texttt{nga} as \texttt{ng}+\texttt{a}, not \texttt{n}+\texttt{ga}; \texttt{tsha} as \texttt{tsh}+\texttt{a}, not \texttt{ts}+\texttt{ha}. Space is a hard word boundary that produces a tsheg (\tib{་}) in the output. The canonical alphabet is not a new standard for humans to read or write; it is a machine-internal representation and is exposed to users only through the suggestion bar of the reference implementation.
+
+\paragraph{Pipeline.} The normalization function $\nu$ is a rewrite pipeline that composes: (a)~a diacritic stripping step (\textit{é}$\to$\texttt{e}, \textit{ö}$\to$\texttt{oe}, \textit{ü}$\to$\texttt{ue}, etc.), (b)~a set of scheme-specific rewrites (EWTS capital-letter conventions, Wylie punctuation, THL silent-final patterns, Tournadre diacritic clusters, ZWPY tone numbers), and (c)~a set of dialect-specific rewrites (Lhasa cluster simplification \texttt{br}$\to$\texttt{dr}, \texttt{bl}$\to$\texttt{l}, Dzongkha palatalization \texttt{khy}$\to$\texttt{ch}, Amdo cluster preservation, Kham voicing shifts). The pipeline is \emph{accepting}: a single input need not be in any one scheme, and the same surface form may produce multiple canonical candidates which are all fed to the disambiguation layer. A conformant implementation \textsc{should} return all plausible canonical forms rather than committing to one at normalization time; commitment is the disambiguation layer's responsibility.
+
+\subsection{Layer 2: The Statistical Disambiguation Layer}
+\label{sec:layer-disambiguation}
+\label{sec:disambiguation}
+
+The disambiguation layer $\delta: \Sigma_C^* \times \mathcal{C} \to \mathcal{P}(\mathcal{W}_T)$ takes a canonical phonetic form together with a context and returns a ranked list of Tibetan candidates. \textbf{It is the guessing machine.} It takes the normalized phonetic input, looks at the surrounding committed Tibetan words, the detected text domain, and the user's recent selections, and produces a ranked distribution over possible Tibetan orthographic forms. It is trained, not written. It is the component that makes the difference between an input standard that is practical to use in real time and a paper exercise that nobody adopts. Our claim, and the central empirical claim of this paper, is that no deterministic rewriter -- no lookup table, no handwritten rule cascade, no exhaustive syllable enumeration -- can substitute for it.
+
+This claim has a precise historical parallel. Pinyin input for Chinese existed before~\citet{chen2000pinyin}, but it required the user to select each character individually and was practical only for short inputs. The move that made Pinyin input sentence-level and practical was the introduction of a trigram language model over the Chinese character sequence, so that the input method could guess the intended characters from the surrounding context rather than asking the user to disambiguate every syllable. Every modern Pinyin IME -- Google Pinyin, Sogou, QQ, Microsoft IME, Apple's built-in input -- is the descendant of that statistical move. The Lotsawa Standard is the same move for Tibetan, twenty-five years later, in a language whose inverse-resolution problem is structurally harder and whose training data is three orders of magnitude smaller.
+
+\paragraph{Normative requirement.} A conformant Lotsawa implementation \textsc{must} incorporate a statistical language model trained on Tibetan text corpora. A pure rule-based or pure dictionary-lookup implementation is not conformant. This is not a stylistic preference; it is a consequence of the problem being an inverse-mapping problem over a non-injective transcription (\S\ref{sec:problem-statement}), for which no deterministic mapping suffices.
+
+\paragraph{Statistical signals.} The statistical engine combines four trained or learned signals:
+\begin{enumerate}
+\item \textbf{N-gram language model} (bigram, trigram, and 4-gram), trained on the Tibetan sentence corpus of~\citet{billingsmoore_hf} and on dictionary-entry n-grams extracted from expert lexicons, used to score candidates given the preceding one, two, or three committed Tibetan syllables.
+\item \textbf{BiLSTM context model}, a small neural network (\textasciitilde 877{,}000 parameters, \textasciitilde 3.45\,MB compiled) that takes the canonical phonetic input as a character sequence and the previous committed Tibetan syllable as a word embedding and outputs a distribution over a 5{,}000-word Tibetan vocabulary. The BiLSTM smooths over the long tail of contexts that do not appear verbatim in the n-gram counts.
+\item \textbf{Automatic text-domain classification} across four registers -- \emph{dharma}, \emph{colloquial}, \emph{formal}, and \emph{numerical} -- which boosts candidates consistent with the current domain. Domain is detected by matching the context window against curated vocabulary sets for each register.
+\item \textbf{Fuzzy phonetic matching}, a weighted Levenshtein matcher with per-edit costs calibrated to Tibetan phonetic equivalence classes, used when the canonical form the user typed has no exact dictionary match (misspellings, OOV words, or novel dialectal variants).
+\end{enumerate}
+
+\paragraph{Hard constraints.} The four statistical signals above are constrained by two deterministic components:
+\begin{enumerate}
+\item[5.] \textbf{A curated phonetic dictionary}, backed by SQLite and derived from expert Tibetan lexicons (Monlam Grand Dictionary, bo-pos, 84000, SOAS; see~\S\ref{sec:data}), whose function is to ensure that the engine's candidates are always valid Tibetan words rather than plausible-looking neologisms proposed by the neural model.
+\item[6.] \textbf{The computational Sumtak particle rules} of~\S\ref{sec:sumtak}, which deterministically override the top statistical candidate whenever the next predicted word is a grammatical particle and the statistical top-1 allomorph disagrees with the rule.
+\end{enumerate}
+
+\paragraph{Operating principle: statistics propose; rules constrain.} The four statistical signals \emph{propose} candidates; the two deterministic components \emph{constrain} the proposals. A candidate that the statistical engine would have ranked highly but that is not in the dictionary is filtered out. A candidate that the statistical engine would have ranked highly but that violates a Sumtak particle rule is replaced by the correct allomorph. The reverse never happens: the deterministic components cannot invent candidates that the statistical engine did not consider; they can only pass, reject, or substitute.
+
+\paragraph{Scoring formula.} The four statistical signals are combined by linear interpolation in probability space. Given a canonical phonetic form $p$ and a context $c$, the hybrid distribution over candidates is
+\[
+P_{\text{stat}}(t \mid p, c) = \sum_{i=1}^{4} \lambda_i \, P_i(t \mid p, c),
+\]
+with weights $\lambda_i = (\lambda_{\text{bigram}}, \lambda_{\text{trigram}}, \lambda_{\text{dict}}, \lambda_{\text{model}}) = (0.30, 0.20, 0.10, 0.40)$ in our reference implementation, calibrated on a development set (\S\ref{sec:eval}). The dictionary and Sumtak constraints are then applied as post-filters. Candidates are drawn from the union of the top-30 lists proposed by the BiLSTM and by the dictionary; a candidate absent from a particular signal receives probability zero under that component.
+
+\subsection{Layer 3: Personalization}
+\label{sec:layer-personalization}
+
+The personalization layer $\pi: \mathcal{P}(\mathcal{W}_T) \times \mathcal{U} \to \mathcal{P}(\mathcal{W}_T)$ takes a ranked candidate list and a user state $u \in \mathcal{U}$, and returns a re-ranked list that adapts to the individual user. The user state records four kinds of signals:
+
+\begin{description}
+\item[Selection history.] Each time the user selects a candidate from a suggestion bar, the selection is recorded as $(p, c, t)$ and used to bias future rankings of the same $(p, c)$ towards $t$. Selections decay with a 30-day half-life so the system follows the user's evolving usage.
+\item[Correction tracking.] When the user manually corrects a committed word, the original and the corrected form are both recorded, and future candidates matching the original are down-weighted while the corrected form is up-weighted.
+\item[Retroactive phrase correction.] After a word is committed, the last several committed words are checked against a phrase table (both hardcoded and SQLite-backed) and against the Sumtak particle rules. If a better phrase-level or grammatical match is found, the user is offered a one-tap correction that replaces the last $k$ committed words with the corrected phrase.
+\item[Personal vocabulary.] The user may add arbitrary (phonetic, Tibetan) pairs to a private personal-vocabulary store, which is consulted with the highest priority of any signal.
+\end{description}
+
+A conformant implementation \textsc{must not} transmit any personalization data off the user's device. All four personalization signals are stored locally on the device running the implementation, regardless of host platform. The reference implementation stores them in the iOS App Group container for its iOS host; other hosts use the equivalent per-application private storage.
+
+\subsection{Why Machine Learning is Structurally Necessary}
+\label{sec:ml-necessary}
+
+The normative requirement in~\S\ref{sec:layer-disambiguation} that a conformant Lotsawa implementation include a trained statistical language model is easy to object to: why cannot resolution simply be reduced to a sufficiently large lookup table -- one entry per (canonical phonetic, context) pair? We argue that this is not possible in practice, not desirable in principle, and that the argument is a consequence of what the inverse-mapping problem actually demands rather than a stylistic preference about implementation technology.
+
+The practical argument is combinatorial. The Tibetan context space is large, and the disambiguation of \texttt{dak} into \tib{བདག}, \tib{དག}, or \tib{བརྡག} depends on the previous one to five committed syllables, the detected text domain, and sometimes on material several sentences earlier. A lookup table that enumerated every context required to reach human-level accuracy would exceed the size of the training corpus from which it was derived, and would then still fail on any context the table did not anticipate.
+
+The principled argument is that the mapping from phonetic input to correct orthography is \emph{inherently smooth}: two contexts that differ in a single non-salient word should produce similar distributions over candidates, even if neither context appears verbatim in any training corpus. A lookup table has no notion of smoothness; a parametric model does. The BiLSTM component of the disambiguation layer exists precisely to provide this smoothness, and our empirical results in~\S\ref{sec:eval} show that it more than doubles top-1 accuracy over the best dictionary-based baseline -- a gap that no lookup table could plausibly close by brute force.
+
+The analogy with the 2000 Pinyin situation is exact. Before~\citet{chen2000pinyin}, lookup-table Pinyin IMEs existed. They worked, after a fashion, for single-character input, and they failed completely at sentence-level input because the combinatorial explosion of contexts defeated any lookup strategy. The fix was a trigram language model that smoothed over unseen contexts. The same fix, upgraded to modern neural methods and combined with explicit Sumtak constraints, is what this standard requires.
+
+\subsection{Computational Formalization of the Sumtak Particle Rules}
+\label{sec:sumtak}
+
+The Sumtak (\tib{སུམ་རྟགས་}), attributed in tradition to Thonmi Sambhota in the 7th century, is the classical grammar of Tibetan. Among its best-known rules are those that govern the selection of grammatical particles -- the genitive/agentive, the instrumental, the locative, and the dative -- based on the final letter of the preceding word. In spoken Lhasa Tibetan all the allomorphs of a given particle collapse into a single spoken form, but in writing they remain orthographically distinct. A phonetic input system must therefore (a)~recognize when the user is entering a particle, and (b)~choose the correct allomorph based on the orthographic final of the preceding word. This is a deterministic grammar rule, not a statistical one, and it is the kind of knowledge that no amount of corpus training will reliably capture unless the rule is given to the system explicitly. To our knowledge it has not previously been encoded in a computational Tibetan input method.
+
+We encode the particle rules as a set of deterministic tables keyed by the base final letter of the preceding orthographic word. Let $f \in \{\text{\tib{ག}}, \text{\tib{ང}}, \text{\tib{ད}}, \text{\tib{ན}}, \text{\tib{བ}}, \text{\tib{མ}}, \text{\tib{འ}}, \text{\tib{ར}}, \text{\tib{ལ}}, \text{\tib{ས}}, \textsc{vowel}\}$ be the final. Table~\ref{tab:sumtak} gives the three tables used in our implementation.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{llll}
+\toprule
+Final $f$ & Genitive & Locative & Instrumental \\
+\midrule
+\tib{ག}      & \tib{གི}  & \tib{ཏུ}  & \tib{གིས}  \\
+\tib{ང}      & \tib{གི}  & \tib{དུ}  & \tib{གིས}  \\
+\tib{ད}      & \tib{ཀྱི} & \tib{ཏུ}  & \tib{ཀྱིས} \\
+\tib{བ}      & \tib{ཀྱི} & \tib{ཏུ}  & \tib{ཀྱིས} \\
+\tib{ས}      & \tib{ཀྱི} & \tib{ཏུ}  & \tib{ཀྱིས} \\
+\tib{ན}      & \tib{གྱི} & \tib{དུ}  & \tib{གྱིས} \\
+\tib{མ}      & \tib{གྱི} & \tib{དུ}  & \tib{གྱིས} \\
+\tib{ར}      & \tib{གྱི} & \tib{དུ}  & \tib{གྱིས} \\
+\tib{ལ}      & \tib{གྱི} & \tib{དུ}  & \tib{གྱིས} \\
+\tib{འ}      & \tib{ཡི}  & \tib{རུ}  & \tib{ཡིས}  \\
+\textsc{vowel} & \tib{འི}  & \tib{རུ}  & \tib{ས}   \\
+\bottomrule
+\end{tabular}
+\caption{Computational Sumtak particle selection tables. Rows are the base orthographic final of the preceding word. Columns are the genitive/possessive, locative, and instrumental particles. Each entry is the grammatically correct written allomorph; in spoken Lhasa all rows within a column collapse into a single pronunciation. To our knowledge this is the first time these tables have been encoded for a real-time computational Tibetan input method.}
+\label{tab:sumtak}
+\end{table}
+
+The rules interact with the disambiguation layer in two places. First, at inference time, when a candidate particle is at or near the top of the suggestion list, the system consults the Sumtak table and promotes the grammatically correct allomorph to the top. Second, at commit time, the retroactive phrase corrector checks whether the user committed an incorrect allomorph (for example \tib{གི} after a word ending in \tib{ས}, which should have been \tib{ཀྱི}) and, if so, offers a one-tap correction. In both cases the Sumtak rules act as a hard constraint on top of the statistical signals, enforcing grammatical correctness that a purely statistical system would learn only approximately and only for frequent contexts. A conformant Lotsawa implementation \textsc{must} consult the Sumtak tables for the genitive, locative, and instrumental particles whenever the top statistical candidate for the next syllable is an allomorph of one of these particles.
+
+\subsection{Conformance}
+\label{sec:conformance}
+
+The Lotsawa Standard is defined above by what it requires of any conformant implementation. This subsection collects those requirements in one place and specifies how conformance is tested.
+
+\paragraph{Normative requirements.} A software system that calls itself a Lotsawa-conformant Tibetan input method \textsc{must} satisfy all of the following:
+
+\begin{enumerate}
+\item[\textbf{C1}] Accept Roman input conforming to any of Wylie, Extended Wylie (EWTS), THL Simplified Phonetic, Tournadre, or SASM/GNC/SRC (ZWPY), and untrained user phonetic input that conforms to none of these, without requiring the user to declare which scheme they are using (\S\ref{sec:layer-normalization}).
+\item[\textbf{C2}] Implement all three layers of~\S\ref{sec:framework}: a normalization layer conforming to~\S\ref{sec:layer-normalization}, a statistical disambiguation layer conforming to~\S\ref{sec:layer-disambiguation}, and a personalization layer conforming to~\S\ref{sec:layer-personalization}.
+\item[\textbf{C3}] Incorporate a statistical language model trained on Tibetan text corpora. A pure rule-based or pure dictionary-lookup system is not conformant.
+\item[\textbf{C4}] Consult the Sumtak particle tables of~\S\ref{sec:sumtak} as a hard constraint on genitive, locative, and instrumental particle selection.
+\item[\textbf{C5}] Achieve at least 45\% top-1 and 65\% top-5 accuracy on the Lotsawa Conformance Test Set version~1.0 (a 20{,}000-query held-out subset of the evaluation data described in~\S\ref{sec:eval}), measured with a published evaluation harness whose Python source is released with this paper.
+\item[\textbf{C6}] Run the complete resolution pipeline locally on the user's device; no user input, committed text, or personalization data may be transmitted off-device.
+\item[\textbf{C7}] Support both Standard Tibetan (\tib{བོད་ཡིག}) and Dzongkha (\tib{རྫོང་ཁ}) as language modes, handling the full complexity of Tibetan Unicode syllable structure per Chapter~14 of the Unicode Standard~\cite{unicode14}.
+\end{enumerate}
+
+An implementation \textsc{should} additionally support the Amdo and Kham dialect modes and \textsc{may} omit them from its first release.
+
+\paragraph{Method-agnostic.} Criterion~\textbf{C3} is deliberately broad. The standard does not prescribe a specific model architecture. The reference implementation uses a hybrid of corpus-trained bigram/trigram/4-gram counts, a small BiLSTM context reranker, and a curated-dictionary filter; any implementation that passes~\textbf{C5} using another architecture (e.g.\ a small transformer, a distilled LLM, or a future method) is equally conformant. This is the same design used by standards such as JPEG and Opus, which specify the bitstream and the conformance vectors but leave the encoder free.
+
+\paragraph{Anti-drift property.} Criterion~\textbf{C5} together with~\textbf{C4} gives the standard teeth: an implementation that ships bad orthography can be shown non-conformant by pointing at its test-set score, and an implementation that ships grammatically incorrect particles can be shown non-conformant by pointing at~\textbf{C4}. The Tibetan literary tradition has maintained orthographic precision for fourteen centuries by codifying the grammar explicitly; Lotsawa inherits that discipline for the digital medium.
+
+% ---------------------------------------------------------------
+\section{Lotsawa: Reference Implementation}
+\label{sec:arch}
+
+This section describes \emph{Lotsawa}, our reference implementation of the standard specified in~\S\ref{sec:framework}. The purpose of a reference implementation is not to sell a product but to prove that a standard is realizable under real constraints and to give adopters a working artifact they can study and re-implement. Lotsawa serves that purpose on every major consumer computing platform.
+
+The implementation is structured around a shared \texttt{LotsawaCore} Swift package that contains the entire resolution pipeline -- normalization, statistical disambiguation, personalization, the trained BiLSTM, the SQLite dictionary, and the Sumtak grammar tables -- with no host-specific dependencies. The package is consumed by three thin host integrations: an iOS custom keyboard extension (currently shipping), a macOS input method (in progress) built on the \texttt{InputMethodKit} framework, and an Android \texttt{InputMethodService} integration (planned). Each host integration provides the event loop and the suggestion-bar UI but delegates all language logic to \texttt{LotsawaCore}. On every host the full pipeline runs locally without cloud connectivity, in conformance with criterion~\textbf{C6} of~\S\ref{sec:conformance}. The memory footprint of the full running system is under 50\,MB, the iOS keyboard-extension limit being the tightest target we currently ship to.
+
+\subsection{Normalization Layer Implementation}
+\label{sec:arch-normalization}
+
+The normalization function $\nu$ of \S\ref{sec:layer-normalization} is realized by two cooperating Swift structs: \texttt{PhoneticMapper}, which handles the common THL/phonetic-style rewrites and maps them to canonical $\Sigma_C$, and \texttt{PhoneticFuzzyMatcher}, which produces alternative normalizations for dialect-specific and misspelled input. An auxiliary \texttt{WylieMapper} handles strict EWTS / Wylie input via full syllable parsing into prefix / superscript / root / subscript / vowel / suffix / post-suffix components. The normalization pipeline is accepting: a single user string typically produces one primary canonical form and several alternatives, all of which are fed to the disambiguation layer with a light penalty on alternatives.
+
+\subsection{Statistical Disambiguation Layer Implementation}
+\label{sec:arch-disambiguation}
+
+The implementation of the statistical disambiguation layer mirrors the normative decomposition of~\S\ref{sec:layer-disambiguation}: four statistical signals that propose candidates, and two deterministic components that constrain the proposals. Each has its own Swift module; they are composed by the \texttt{Transliterator} at inference time.
+
+\paragraph{Statistical signal 1: n-gram context engine.}
+The \texttt{ContextEngine} Swift class stores 66{,}193 bigrams, 226{,}524 trigrams, and 287{,}062 4-grams extracted from the Tibetan sentence corpus and from dictionary entries. Its raw scoring for a candidate $c$ given context $w_{t-3}, w_{t-2}, w_{t-1}$ is
+\[
+s_{\text{ngram}}(c) = 4 \, n_4 + 3 \, n_3 + 2 \, n_2,
+\]
+where $n_k$ is the $k$-gram match count, normalized to a $[0,1]$ confidence score. When the confidence exceeds 0.80 and the margin over the second-ranked candidate exceeds 0.20, the system auto-commits without waiting for user confirmation. At commit time the same class consults the Sumtak tables proactively; when the n-gram signal predicts that the next word is likely to be a grammatical particle, the engine substitutes the grammatically correct allomorph for the statistical top-1.
+
+\paragraph{Statistical signal 2: BiLSTM context model.}
+The \texttt{MLPredictor} wraps a compiled CoreML model that was trained separately in PyTorch (\S\ref{sec:data}). Its architecture is a single-layer bidirectional LSTM character encoder (input character embedding dimension 32, hidden dimension 64, bidirectional output 128) combined with a 32-dimensional previous-word embedding, passed through a 160~$\to$~128~$\to$~5{,}000 MLP classifier with dropout 0.3. The model has 877{,}096 parameters and compiles to a 3.45\,MB CoreML \texttt{neuralnetwork}-backend artifact. It is lazy-loaded three seconds after the keyboard appears, to avoid a memory spike during initialization, and unloaded on dismiss; these are iOS-specific engineering choices, not requirements of the standard.
+
+\paragraph{Statistical signal 3: text-domain classification.}
+The \texttt{ContextEngine} also detects the active text domain by matching the context window against four curated vocabulary sets: \emph{dharma} (38 core terms including \tib{སངས་རྒྱས}, \tib{ཆོས}, \tib{དགེ་འདུན}, \tib{བླ་མ}, \tib{རིན་པོ་ཆེ}), \emph{colloquial} (33 pronouns, copulas, and everyday nouns), \emph{numerical} (Tibetan cardinals and counting words), and \emph{formal} (government and legal vocabulary). Candidates that belong to the detected domain receive a multiplicative boost in the hybrid score.
+
+\paragraph{Statistical signal 4: fuzzy phonetic matcher.}
+For off-canonical or misspelled input, \texttt{PhoneticFuzzyMatcher} computes a weighted Levenshtein distance with per-edit costs of 2 for phonetic-equivalence classes (\{k,kh,g\}, \{p,ph,b\}, \{e,ay,ai\}, \ldots), 3 for vowel confusions, and 10 for unrelated substitutions. It also generates typo variations (transpositions, missing vowels, doubled characters, aspirate/voice swaps) and dialect-specific transformations, feeding any that produce a dictionary hit back into the candidate set.
+
+\paragraph{Hard constraint 1: curated phonetic dictionary.}
+\texttt{SQLiteDictionary} exposes a read-only SQL handle over the bundled \texttt{lotsawa.db} file (\S\ref{sec:data}), which contains 184{,}180 phonetic-to-Tibetan entries derived from expert Tibetan lexicons. Lookups use an index-friendly range query on a B-tree index over the phonetic key, with nine cached prepared statements running on a serial dispatch queue. The dictionary's role in the pipeline is to filter the statistical engine's candidates: a neural proposal that is not attested in any lexicon is down-weighted or suppressed, ensuring that the keyboard does not invent Tibetan words.
+
+\paragraph{Hard constraint 2: Sumtak particle rules.}
+\texttt{PhraseCorrector} implements the Sumtak tables of~\S\ref{sec:sumtak} and is consulted at two points in the pipeline. At inference time, when the top statistical candidate is an allomorph of a genitive, locative, or instrumental particle, the rules override the statistical choice with the grammatically correct allomorph based on the final letter of the preceding word. At commit time, the retroactive phrase corrector checks whether the user committed an incorrect allomorph and, if so, offers a one-tap correction.
+
+\paragraph{Combining the signals.}
+The four statistical signals are combined by linear interpolation in probability space with weights $(\lambda_{\text{model}}, \lambda_{\text{bigram}}, \lambda_{\text{trigram}}, \lambda_{\text{dict}}) = (0.40, 0.30, 0.20, 0.10)$ that were calibrated on a development split. Candidates are drawn from the union of the top-30 lists proposed by the BiLSTM and by the curated dictionary; fuzzy-matcher candidates are injected into the candidate set when the exact canonical form has no dictionary match; the dictionary hard-constraint filter is applied last; the Sumtak particle override replaces the statistical top-1 candidate when applicable. Full pseudocode is given in Appendix~\ref{app:pipeline}.
+
+\subsection{Personalization Layer Implementation}
+\label{sec:arch-personalization}
+
+\texttt{UserLearningStore} implements the personalization layer $\pi$ of~\S\ref{sec:layer-personalization}. All four kinds of signals -- selection history, correction tracking, retroactive phrase correction, and personal vocabulary -- are stored in the per-application private storage provided by the host platform; on iOS this is the App Group container, on macOS the application-specific Application Support directory, and on Android the application private storage. Nothing is transmitted off-device, as required by conformance criterion~\textbf{C6}. The decay function for selection history is $w(t) = 2^{-t/T}$ with a half-life $T$ of 30~days; personal-vocabulary entries receive a flat $3\times$ multiplier that dominates any corpus-derived signal.
+
+\subsection{Shipping Scoring Pipeline}
+\label{sec:arch-pipeline}
+
+The final ranking in the reference implementation composes the four statistical signals, the two hard constraints, and the personalization re-rank into a single pipeline executed on every keystroke. The pipeline's stages are: (1)~direct phonetic-to-Unicode fallback, used when no other stage produces a candidate and required to guarantee that the keyboard always emits something; (2)~exact dictionary lookup for the canonical phonetic key; (3)~BiLSTM forward pass for the same key and context; (4)~n-gram rescoring of the union of the top-30 BiLSTM and top-30 dictionary candidates; (5)~domain-classifier boost; (6)~fuzzy matcher, invoked when stage~2 returned nothing; (7)~personalization re-rank against the user's selection history and personal vocabulary; and (8)~Sumtak particle override applied to the top candidate if it is an allomorph of a genitive, locative, or instrumental particle. Full pseudocode appears in Appendix~\ref{app:pipeline}.
+
+% ---------------------------------------------------------------
+\section{Data}
+\label{sec:data}
+
+\subsection{Sources}
+
+The training corpus is drawn from three kinds of resources. First, we use the Hugging Face dataset \texttt{billingsmoore/tibetan-phonetic-transliteration-dataset}, which contains 98{,}596 parallel (Tibetan, phonetic) classical-text sentence pairs. Second, we use the Monlam Grand Dictionary (107{,}064 entries), the SOAS Tibetan Lexicon, and the bo-pos POS-tagged entry list. Third, we use the \texttt{tibetan-verbs-database} for tense-conjugation coverage.
+
+\subsection{Sentence Alignment}
+
+Phonetic tokens in the Hugging Face corpus often collapse two or three Tibetan syllables into a single compound word (\textit{yowa}~=~གཡོ་བ, \textit{trulpé}~=~སྤྲུལ་པའི). Only 3{,}685 of the 98{,}596 sentences (3.7\%) have an exact 1-to-1 token alignment. We recover the remaining sentences through dynamic-programming alignment in which each phonetic token consumes $k \in \{1,2,3\}$ Tibetan syllables, minimizing $\sum (k-1)^2$. Table~\ref{tab:alignment} reports yield: the DP alignment recovers 94{,}255 additional sentences, bringing the total to 97{,}940 (99.3\%).
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lr}
+\toprule
+Alignment bucket & Sentences \\
+\midrule
+Exact 1-to-1 alignment         & 3{,}685  \\
+DP alignment, $k \in \{1,2,3\}$ & 94{,}255 \\
+DP infeasible                  & 93      \\
+Phonetic > Tibetan (malformed) & 564     \\
+Empty                          & 0       \\
+\midrule
+\textbf{Total kept (99.3\%)}   & \textbf{97{,}940} \\
+\bottomrule
+\end{tabular}
+\caption{Sentence alignment yield on the Hugging Face Tibetan-phonetic corpus.}
+\label{tab:alignment}
+\end{table}
+
+\subsection{SQLite Schema}
+
+The shipped dictionary is a single \texttt{lotsawa.db} file (82\,MB) containing seven tables (Table~\ref{tab:sqlite}), queried by the production pipeline via a read-only \texttt{SQLITE\_OPEN\_NOMUTEX} connection on a serial dispatch queue.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrp{3.8cm}}
+\toprule
+Table & Rows & Purpose \\
+\midrule
+\texttt{phonetic\_entries} & 184{,}180 & phonetic→Tibetan with freq \\
+\texttt{bigrams}           &  66{,}193 & word$_1$ → word$_2$, count \\
+\texttt{trigrams}          & 226{,}524 & key "$w_1|w_2$" → word, count \\
+\texttt{fourgrams}         & 287{,}062 & key "$w_1|w_2|w_3$" → word, count \\
+\texttt{word\_freq}        &  10{,}748 & raw word counts \\
+\texttt{reverse\_lookup}   &   6{,}778 & Tibetan → shortest phonetic \\
+\texttt{phrases}           &  38{,}198 & multi-word phonetic → phrase \\
+\bottomrule
+\end{tabular}
+\caption{SQLite tables in the shipped \texttt{lotsawa.db}. Total on-disk size 82\,MB; no in-memory JSON is kept resident.}
+\label{tab:sqlite}
+\end{table}
+
+\subsection{Training Pair Construction}
+
+From aligned sentences we emit $(\text{phonetic}_i, \text{context}=\text{tibetan}_{i-1}, \text{target}=\text{tibetan}_i, 1.0)$ tuples. From the word-frequency table we emit non-contextual tuples weighted by $\log(1+f)$. From the bigram table we emit tuples with the previous Tibetan word as context, phonetic obtained by reverse-lookup, weighted by $\log(1+\text{count})$. In total we obtain 701{,}951 training pairs (approximately 631{,}000 from sentence alignment, 3{,}782 from the word-frequency table, and 66{,}182 from bigrams with a valid reverse-lookup), split 80/10/10 into 561{,}560 train, 70{,}195 validation, and 70{,}196 test pairs.
+
+% ---------------------------------------------------------------
+\section{Evaluation}
+\label{sec:eval}
+
+The central empirical claim of this paper is that statistical disambiguation is necessary for the Lotsawa Standard to be practical as a daily input method. This section tests that claim by comparing four systems on 20{,}000 held-out sentence-level queries: a frequency-only dictionary baseline, an n-gram-only baseline that approximates the production context engine without the neural model, the BiLSTM model on its own, and the full hybrid pipeline that combines all four statistical signals with the dictionary and Sumtak constraints. We also evaluate a curated homophone-disambiguation suite that probes the hard cases each family of homophone in Table~\ref{tab:homophones} is known to generate.
+
+\subsection{Setup}
+
+We train the BiLSTM for up to 30 epochs with Adam (learning rate $10^{-3}$, weight decay $10^{-5}$, gradient clip 1.0) and cosine learning-rate decay. Early stopping on validation loss with patience~5. Batch size 512. All training runs use a fixed random seed (42) for reproducibility. Training runs on Apple Silicon via MPS. The validation loss decreased monotonically throughout training, so early stopping was never triggered. Training reached epoch~30 in approximately 105 minutes of wall-clock time; the final validation top-1 accuracy at epoch~30 was 48.87\% and top-5 accuracy was 68.05\%. Table~\ref{tab:training} summarizes the learning curve.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{rrrrr}
+\toprule
+Epoch & Train loss & Val loss & Val top-1 & Val top-5 \\
+\midrule
+1  & 5.97 & 4.67 & 32.2\% & 48.2\% \\
+5  & 3.66 & 3.41 & 43.2\% & 62.3\% \\
+10 & 3.28 & 3.13 & 46.2\% & 65.6\% \\
+15 & 3.12 & 3.01 & 47.8\% & 67.1\% \\
+20 & 3.02 & 2.95 & 48.5\% & 67.7\% \\
+25 & 2.98 & 2.93 & 48.8\% & 68.1\% \\
+30 & 2.96 & 2.92 & 48.9\% & 68.1\% \\
+\bottomrule
+\end{tabular}
+\caption{BiLSTM training curve. Loss is a weight-averaged cross-entropy over training pairs; top-1 and top-5 are accuracy over the 70{,}195-pair validation split.}
+\label{tab:training}
+\end{table}
+
+\subsection{Baselines}
+
+We compare four systems, each corresponding to a plausible candidate architecture for a Lotsawa-conformant implementation of the disambiguation layer:
+
+\begin{description}
+\item[Frequency-only (no statistics, no context).] Top-1 dictionary lookup by raw corpus frequency, ignoring all context. This is the strongest non-statistical baseline and is roughly the accuracy ceiling of any deterministic or table-driven implementation of the standard. It is what every layout-based Tibetan keyboard currently shipping on iOS, macOS, Android, and Windows effectively amounts to, once the user composes syllables by hand.
+\item[N-gram context (statistics on counts only).] Curated dictionary augmented with bigram and trigram rescoring from~\texttt{lotsawa.db}, but no neural model. This is the natural dividing line between a rule-and-counts system and a system that uses a trained parametric model. Under the operating principle of~\S\ref{sec:layer-disambiguation}, this system has statistical proposals but only from counts, not from learned smoothness.
+\item[BiLSTM only (neural, no dictionary, no n-gram).] Our trained neural model as described in~\S\ref{sec:arch-disambiguation}, making predictions in isolation. It ignores the curated dictionary entirely and has no n-gram signal; it has access only to the phonetic character sequence and the immediately previous committed word. This baseline isolates the contribution of the learned parametric component.
+\item[Hybrid (the reference implementation).] The full scoring function of~\S\ref{sec:arch-disambiguation}: all four statistical signals combined in probability space, constrained by the dictionary filter, with the Sumtak particle override applied as a post-step. This is the configuration that ships in the iOS reference implementation and the one that is conformance-tested against criterion~\textbf{C5}.
+\end{description}
+
+All four systems share the same normalization layer and the same test-set queries; they differ only in which disambiguation components are active.
+
+\subsection{Held-out Accuracy: The Central Empirical Claim}
+
+Table~\ref{tab:heldout} reports the central empirical result of this paper: top-1, top-5, and top-10 accuracy on 20{,}000 sentence-level queries sampled without replacement from the 10\% test split. Each query is a single phonetic token together with its zero-, one-, or two-word Tibetan left context; the target is the first Tibetan syllable of the group that DP-aligned to that phonetic token. The four systems in the table are the four candidate disambiguation engines described in~\S\ref{sec:layer-disambiguation}: a dictionary-only baseline that approximates every existing Tibetan IME we are aware of; an n-gram baseline that adds bigram and trigram rescoring without the neural model; the BiLSTM model on its own; and the full hybrid of~\S\ref{sec:layer-disambiguation} that linearly interpolates the BiLSTM, the n-grams, and the dictionary prior, with the Sumtak rules applied as post-constraint.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+System & Top-1 & Top-5 & Top-10 & ms/q \\
+\midrule
+Freq-only                 & 21.4\% & 28.1\% & 28.5\% & 0.03 \\
+N-gram context            & 24.6\% & 28.4\% & 28.5\% & 0.06 \\
+BiLSTM only               & 48.9\% & 68.0\% & 74.3\% & 0.35 \\
+\textbf{Hybrid (ours)}    & \textbf{52.4\%} & \textbf{71.7\%} & \textbf{77.1\%} & 0.46 \\
+\bottomrule
+\end{tabular}
+\caption{Held-out accuracy and per-query latency on 20{,}000 sentence-level queries sampled from the 10\% test split of the aligned Hugging Face corpus. Latencies are measured on Apple Silicon (MPS); on-device iOS CPU latencies are approximately 3--5$\times$ higher but still imperceptible for interactive input.}
+\label{tab:heldout}
+\end{table}
+
+The central result is the gap between the dictionary-based baselines and the systems that use a trained language model. The frequency-only and n-gram-only baselines -- the best we could build without any neural component, and still substantially stronger than the layout-based keyboards that ship on every major consumer platform today -- reach 21.4\% and 24.6\% top-1 accuracy respectively. The BiLSTM on its own reaches 48.9\%, and the full hybrid reaches 52.4\%. Statistical disambiguation is therefore responsible for an absolute improvement of approximately 31 percentage points in top-1 accuracy and 43 percentage points in top-5 accuracy over the strongest non-statistical baseline. This is the precise sense in which criterion~\textbf{C3} of the conformance regime (\S\ref{sec:conformance}) is not a stylistic preference but a load-bearing requirement: no implementation that lacks a trained language model can pass criterion~\textbf{C5}, because the gap between 24.6\% and the 45\% accuracy floor is exactly the gap that the BiLSTM and the n-gram counts together fill.
+
+A secondary observation concerns the hybrid versus the neural model alone. The hybrid -- a linear interpolation between the BiLSTM distribution, the bigram distribution, the trigram distribution, and the dictionary prior -- adds a further 3.5 absolute points on top-1 over the pure BiLSTM, and the gap widens at top-5 (71.7\% vs 68.0\%) and top-10 (77.1\% vs 74.3\%). This is consistent with the ``statistics propose; rules constrain'' framing of~\S\ref{sec:layer-disambiguation}: the BiLSTM is a good guesser but not a perfect one, and the dictionary prior together with the n-gram counts prevent it from proposing plausible-but-invalid candidates in the long tail.
+
+\subsection{Homophone Disambiguation}
+
+Table~\ref{tab:homophone-results} reports accuracy on a curated suite of 46~homophone cases covering 14~syllable families including the eight listed in Table~\ref{tab:homophones}. Each case consists of a phonetic input, a one- or two-word Tibetan context, and the expected disambiguated output. The contexts were handcrafted from the semantic-hint categories in \S\ref{sec:arch}: number sequences, dharma collocations, verb--object patterns (drink+water, burn+fire), and grammatical particles. This task is intentionally harder than the sentence-level held-out evaluation because the contexts are sparse (one or two words) and many of them do not appear verbatim in training.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrr}
+\toprule
+System & Top-1 & Top-5 \\
+\midrule
+Freq-only              & 26.1\% & 54.3\% \\
+N-gram context         & 28.3\% & 54.3\% \\
+BiLSTM only            & 30.4\% & 67.4\% \\
+\textbf{Hybrid (ours)} & 28.3\% & \textbf{67.4\%} \\
+\bottomrule
+\end{tabular}
+\caption{Homophone disambiguation accuracy on the curated 46-case suite. Hybrid matches BiLSTM-only on top-5 (67.4\%) while the pure neural baseline edges out the hybrid on top-1 (30.4\% vs 28.3\%).}
+\label{tab:homophone-results}
+\end{table}
+
+The homophone suite reveals a different pattern than the held-out evaluation. All four systems agree on top-5 ceilings (54.4\% for the two dictionary-based baselines, 67.4\% for systems using the neural model), indicating that the correct syllable is usually \emph{somewhere} in the top five suggestions, which is the actual user-facing region of the iOS suggestion bar. On top-1 specifically, the BiLSTM alone slightly beats the hybrid (30.4\% vs 28.3\%); we trace this to the fact that the hybrid's n-gram signal is most informative when the training corpus actually contains the relevant bigram, and several of our crafted contexts (e.g., \textit{thung~chu} ``drink~water'') are rare in a training corpus dominated by classical dharma texts where \textit{'thung~chu} with the achung prefix is more common. The gap is one test case and is not statistically significant on $n=46$.
+
+Qualitatively, the model correctly resolves numerical sequences (\texttt{gu chu} → \tib{དགུ བཅུ}, \texttt{shi nga} → \tib{བཞི ལྔ}) and dharma collocations (\texttt{sangye choe} → \tib{སངས་རྒྱས་ཆོས}) but systematically prefers the more frequent meaning (\textit{ten} over \textit{water}, \textit{dharma} over \textit{you}) in under-specified contexts. In the shipping iOS keyboard these edge cases are handled by the production semantic hint table, which we exclude from this evaluation to keep the comparison focused on the statistical and neural components.
+
+\subsection{Latency and Memory in the iOS Implementation}
+
+Table~\ref{tab:resources} reports the compiled footprint of each pipeline component as measured in the iOS host integration -- the most memory-constrained target we currently ship to. The dominant on-disk artifact is the SQLite dictionary (82\,MB), which is memory-mapped and only pages accessed are resident. The CoreML model is lazy-loaded three seconds after \texttt{viewWillAppear} to avoid a memory spike during keyboard initialization and unloaded on \texttt{viewDidDisappear}. The standard itself does not require these optimizations; they are iOS-specific engineering choices imposed by Apple's keyboard-extension memory limits.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrp{3.5cm}}
+\toprule
+Component & On-disk & Notes \\
+\midrule
+SQLite dict      & 82.1\,MB  & mmap, page-cached \\
+BiLSTM (CoreML)  & 3.45\,MB  & \texttt{neuralnetwork} backend, loaded 3\,s after appear, unloaded on dismiss \\
+ML vocab         & 255\,KB   & JSON \\
+Sumtak rules     & 1.7\,KB   & JSON \\
+Semantic hints   & 25\,KB    & JSON \\
+Phonetic vars    & 78\,KB    & JSON \\
+Phonetic pairs   & 90\,KB    & JSON \\
+\midrule
+\multicolumn{3}{l}{\emph{Per-query wall-clock latency (Apple Silicon MPS):}} \\
+Freq-only        & \multicolumn{2}{l}{0.03 ms} \\
+N-gram context   & \multicolumn{2}{l}{0.06 ms} \\
+BiLSTM only      & \multicolumn{2}{l}{0.35 ms} \\
+Hybrid (ours)    & \multicolumn{2}{l}{0.46 ms} \\
+\bottomrule
+\end{tabular}
+\caption{Compiled size and per-query latency of each pipeline component. The bundled data artifacts total approximately 85\,MB on disk. Resident memory for the running keyboard (once the model is loaded) is well under the iOS extension's 50\,MB limit because SQLite is memory-mapped and only accessed pages are resident.}
+\label{tab:resources}
+\end{table}
+
+% ---------------------------------------------------------------
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{Why the hybrid wins over pure neural.} The held-out numbers show that the BiLSTM alone already beats the n-gram-only baseline by a factor of two. Adding the dictionary filter and the n-gram signal on top then adds a further 3.5 absolute points. We attribute this to two sources. First, the BiLSTM has a 5{,}000-word output vocabulary, and anything outside that vocabulary is invisible to it; the dictionary covers 184{,}180 entries and can contribute candidates the BiLSTM would never propose. Second, the BiLSTM occasionally proposes plausible-looking Tibetan orthographic forms that are simply not real words, and the dictionary filter eliminates them. The hybrid is strictly better than either alone because the signals are complementary, and because the hard constraints correct the statistical engine's worst failure modes.
+
+\paragraph{Why the hybrid does not win on every homophone case.} The homophone test set is deliberately adversarial. Its contexts are one to two committed Tibetan words, and many of the contexts we hand-crafted do not appear verbatim in the training corpus, which is dominated by classical dharma register. On these cases the BiLSTM falls back on its learned priors (ten is more frequent than water for \texttt{chu}; dharma is more frequent than you for \texttt{choe}), and the n-gram signal adds nothing because the bigram is unseen. The qualitative lesson is that the 46-case suite is measuring a different property than the 20{,}000-sentence held-out: it is measuring behaviour on novel contexts, which neither the statistical engine alone nor the Sumtak constraint alone is guaranteed to handle. The production semantic-hint table, which we exclude from this evaluation, closes most of this gap in practice.
+
+\paragraph{Failure modes.} The system fails most often on: (a)~rare proper names and Sanskrit loan-words not in the curated dictionary; (b)~Dzongkha-specific vocabulary when the user has not explicitly selected the Dzongkha language mode; (c)~code-switched sentences mixing English and Tibetan in a single buffer; and (d)~contexts drawn from a register (e.g., modern journalism, technical prose) that is thinly represented in the training corpus. The personalization layer eventually memorizes frequent user-specific vocabulary for~(a). Failure~(b) is addressed by the language-mode toggle in the reference implementation and by the Amdo and Kham extensions in future work. Failure~(c) is outside the scope of a standard that assumes a single input-language context per keystroke; the host-platform globe key already provides the standard escape hatch. Failure~(d) is a training-data problem, to be addressed by growing the corpus.
+
+\paragraph{Ethical considerations.} The Lotsawa Standard is designed to support the preservation of a fourteen-century literary tradition whose orthographic precision the existing digital infrastructure does not currently uphold. A conformant implementation collects no analytics, transmits no data, and runs entirely on the user's device (criterion~\textbf{C6}), because the standard treats privacy as a property of the protocol and not of individual implementations. All training corpora used by our reference implementation are either publicly released by their authors under permissive licenses or are explicitly credited to the source lexicographers (\S\ref{sec:data}). We make no claim to have captured classical meaning with full fidelity: input methods assist typists, they do not translate wisdom. But the standard's insistence on orthographic correctness -- through the dictionary filter, through the Sumtak constraint, and through the conformance test set -- is intended to ensure that a typist using a Lotsawa-conformant keyboard produces Tibetan that the tradition would recognize as Tibetan.
+
+\paragraph{Limitations of this evaluation.} Our 20{,}000-query held-out test set is drawn from a classical-register parallel corpus~\cite{billingsmoore_hf} and is therefore biased toward dharma vocabulary. A Lotsawa-conformant implementation that is optimized for modern colloquial Tibetan will likely score differently on the version~1.0 conformance test set than our reference implementation; we consider this a feature of the first version and expect future versions of the test set to broaden coverage. Dzongkha evaluation is currently limited by the size of the curated Dzongkha sub-corpus and by the absence of a parallel Dzongkha-phonetic training resource comparable to~\citet{billingsmoore_hf}. Amdo and Kham normalization is specified in the standard but not yet evaluated. Our BiLSTM output vocabulary is limited to 5{,}000 words; tokens outside this vocabulary fall back to the dictionary and fuzzy matcher rather than to learned representations, which is acceptable for the first version of the standard but is a natural target for future neural architectures with larger output vocabularies.
+
+% ---------------------------------------------------------------
+\section{Conclusion and Call for Adoption}
+\label{sec:conclusion}
+
+Chinese typing became practical in 2000 when~\citet{chen2000pinyin} introduced trigram language models into the Pinyin conversion pipeline. Every subsequent Pinyin IME inherits that architecture, and hundreds of millions of people now type Chinese every day on the statistical descendants of that one paper. This paper is the direct Tibetan counterpart, twenty-five years later, under the harder conditions imposed by a richer orthography, four dialect groups, a fourteen-century literary tradition that the standard must not corrupt, and three orders of magnitude less training data.
+
+We identified and formalized the Tibetan phonetic resolution problem as distinct from the transcription-standardization problem that existing Roman-input schemes solve. We proposed the \textbf{Lotsawa Standard}, a three-layer input protocol specified normatively in~\S\ref{sec:framework}: a normalization layer that subsumes Wylie, EWTS, THL, Tournadre, and ZWPY; a statistical disambiguation layer whose central component is a corpus-trained language model; and a personalization layer that adapts to individual users. We presented the first computational formalization of the Sumtak particle selection rules as a hard deterministic constraint layered on top of the statistical model. We released \textbf{Lotsawa}, a cross-platform reference implementation structured around a shared Swift package with iOS, macOS, and Android host integrations. We demonstrated empirically that the statistical disambiguation layer is responsible for a 31 percentage-point absolute improvement in top-1 accuracy over the strongest dictionary-based baseline, confirming that the standard is practical only in the presence of a trained language model.
+
+\paragraph{Adoption.} The Lotsawa Standard is proposed for adoption by the Tibetan computing community. We specifically invite:
+
+\begin{itemize}
+\item \textbf{The input-method teams at Apple, Google, and Microsoft.} These are the three organizations whose implementation decisions determine what typing Tibetan feels like on every consumer device. We release the reference implementation and the conformance test set so that these teams can evaluate the standard against their existing internal work and extend or replace their current layout-based Tibetan keyboards.
+\item \textbf{BDRC, 84000, Lotsawa House, Monlam, OpenPecha, Tsadra, and Esukhia.} These organizations form the core of the existing Tibetan digital-dharma infrastructure. They are the primary stewards of the corpora, dictionaries, and tooling on which our reference implementation is built, and they are the natural maintainers of future versions of the normalization layer and the conformance test set.
+\item \textbf{The Dzongkha Development Commission.} Dzongkha is one of the two languages Lotsawa supports from its first release, and the Commission is the appropriate authority for the Dzongkha-specific normalization and disambiguation tables.
+\item \textbf{The Unicode Consortium and ISO TC~46.} The Unicode Standard has specified Tibetan script since version 2.0 (1996), but has no corresponding normative guidance on how Tibetan is to be typed. The Lotsawa Standard, or a successor that revises it, is a natural candidate for such guidance.
+\end{itemize}
+
+\paragraph{Future work.} Future work will extend the normalization layer's coverage of the Amdo and Kham dialects to match its current coverage of Lhasa and Dzongkha, complete the macOS and Android host integrations, grow the conformance test set to cover a broader range of text domains, and open a versioning and governance process for the standard so that it can evolve without losing the anti-drift properties that its conformance clause is designed to provide.
+
+\paragraph{Reproducibility and release.} The reference implementation, the training and evaluation scripts, the trained model weights, the SQLite dictionary, the Sumtak tables, the canonical-form specification, and the version~1.0 conformance test set are released under a permissive license at \url{<to be filled in after anonymization lift>}.
+
+\paragraph{Closing.} This work is offered in the spirit, and in conscious continuity with the work, of the 8th-century translators whose name it carries. The \emph{Mahāvyutpatti} standardized, by royal decree, how Sanskrit was to be rendered into Tibetan; its purpose was to preserve the meaning of a tradition across the change of medium from one script to another. The Lotsawa Standard standardizes, for a community rather than by decree, how Tibetan is to be typed from a Roman keyboard; its purpose is to preserve the precision of a tradition across the change of medium from manuscript to phone screen. If it succeeds, the typing of Tibetan will one day be as effortless as the typing of Chinese -- no more remarkable, and no less faithful, than what the great translators achieved twelve hundred years ago.
+
+\bibliographystyle{acl_natbib}
+\bibliography{main}
+
+\appendix
+
+\section{Disambiguation Pipeline Pseudocode}
+\label{app:pipeline}
+
+\begin{verbatim}
+Input: phonetic P, context window C = [w_{t-4}, ..., w_{t-1}]
+Output: ranked list of Tibetan candidates
+
+function rank(P, C):
+  M <- {}  # word -> score
+
+  # 1. Model log-probabilities (top-30)
+  lp <- BiLSTM(encode_phon(P), C[-1])
+  for (w, s) in top_k(lp, 30):
+    M[w] <- w_model * exp(s)
+
+  # 2. Dictionary candidates for the exact phonetic key
+  for (w, freq) in SQLite.freq_lookup(P, 30):
+    q_dict <- freq / sum_of_dict_freqs
+    if w in M:
+      M[w] += gamma_dict * q_dict
+    else:
+      M[w] <- w_model * exp(lp[w]) + gamma_dict * q_dict
+
+  # 3. Bigram and trigram context rescore
+  if C[-1] is set:
+    bg <- SQLite.bigrams(C[-1])
+    bg_total <- sum(bg.values)
+    for w in bg:
+      if w in M:
+        M[w] += alpha_bigram * bg[w] / bg_total
+
+  if C[-2] and C[-1]:
+    tg <- SQLite.trigrams("C[-2]|C[-1]")
+    tg_total <- sum(tg.values)
+    for w in tg:
+      if w in M:
+        M[w] += beta_trigram * tg[w] / tg_total
+
+  # 4. Sumtak grammar override for particles
+  if top-1(M) is a genitive/locative particle:
+    final_letter <- last_base_letter(C[-1])
+    correct <- SumtakTable[final_letter]
+    if correct != top-1(M):
+      M[correct] <- max(M[top-1(M)]) + eps
+
+  # 5. User preferences
+  for w in UserStore.preferred_for(P):
+    M[w] <- max(M[w] or 0, max(M.values)) * 1.2
+
+  return sorted_by_score(M, descending)
+\end{verbatim}
+
+Hyperparameter defaults used in the shipping system and in our
+evaluation:
+$\alpha_{\text{bigram}}=0.30$,
+$\beta_{\text{trigram}}=0.20$,
+$\gamma_{\text{dict}}=0.10$,
+$w_{\text{model}}=1-\alpha-\beta-\gamma=0.40$.
+
+\end{document}

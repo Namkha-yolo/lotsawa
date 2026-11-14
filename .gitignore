@@ -1,0 +1,52 @@
+# --- secrets and signing: never commit ---
+.env
+.env.*
+*.certSigningRequest
+*.p12
+*.mobileprovision
+CertificateSigningRequest*
+
+# --- build output ---
+.build/
+build/
+DerivedData/
+*.ipa
+*.xcarchive
+*.dSYM
+LotsawaKeyboard/build/
+LotsawaCore/.build/
+LotsawaCore/Sources/LotsawaCore/TibetanLM.mlmodelc/
+
+# --- Xcode user state ---
+xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+.swiftpm/xcode/xcuserdata/
+
+# --- Python ---
+.venv/
+venv/
+Scripts/venv/
+__pycache__/
+*.pyc
+
+# --- third-party data clones (see README: Data) ---
+datasets/
+
+# --- LaTeX intermediates ---
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+
+# --- local clutter ---
+.DS_Store
+.claude/
+.vscode/
+Screenshot*.png
+*copy.pdf
+_git_backup/

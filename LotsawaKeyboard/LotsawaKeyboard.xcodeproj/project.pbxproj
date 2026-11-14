@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F7C3BD36F0F33191BFEAF2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFAB5C9749E11C6B22D3CD6 /* ContentView.swift */; };
+		2C08E0F4B689C2D3E8CF990A /* LotsawaCore in Frameworks */ = {isa = PBXBuildFile; productRef = 520FAC1C0B92653AAC04409F /* LotsawaCore */; };
+		61595500A603E3416CE0A288 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E7B36A78AA5C0BAB4E981056 /* PrivacyInfo.xcprivacy */; };
+		6B27EB1F9948BEE001217D25 /* LotsawaCore in Frameworks */ = {isa = PBXBuildFile; productRef = A539CF594D7ED05A4C0E7132 /* LotsawaCore */; };
+		9A14DAFBAF002F6E12C09583 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86524551140C83D4C4C2FF2 /* PrivacyPolicy.swift */; };
+		B8D2E4F6A1C3570E9D2B4A8F /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3B9E2D1C4F5068A9E7B3D2 /* GuideView.swift */; };
+		A70E6B7D3BC6685155BED6B9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 53982C7B2A69D12DD1A46684 /* PrivacyInfo.xcprivacy */; };
+		CA14FDB4BA25F21C23B98E75 /* LotsawaKeyboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC031ABE7D4368835D80D8B0 /* LotsawaKeyboardApp.swift */; };
+		D4385A3C8AD61F48BA295245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF29886607DDDAC08ED0B4C4 /* Assets.xcassets */; };
+		E81B5073091C1591B1C237D3 /* KeyboardExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DDF6900434B40F3719A7A6D1 /* KeyboardExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EF543BD692ED703425C00D10 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D362274E1E3F01D6282BBC6 /* KeyboardViewController.swift */; };
+		F3FBB10B7C2E55F1E01E8305 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F24FA343D342AB2C4AF25E /* KeyboardView.swift */; };
+		FC74634BE37893E4D9F64E53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761140E173F075F740589315 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		254452DDAC9C01A2711DEADA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EDA258BA25A133F372C6A27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B30A64CF1D32A665A216AF9F;
+			remoteInfo = KeyboardExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CD93B39466F486FF5E827584 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E81B5073091C1591B1C237D3 /* KeyboardExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		05F24FA343D342AB2C4AF25E /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		3153427D00996E498C6C528A /* LotsawaKeyboard.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LotsawaKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D362274E1E3F01D6282BBC6 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		53982C7B2A69D12DD1A46684 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		55923A6591EDED5B70648321 /* KeyboardExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardExtension.entitlements; sourceTree = "<group>"; };
+		60DADB4148ECFD3BA2DFA67D /* LotsawaKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LotsawaKeyboard.entitlements; sourceTree = "<group>"; };
+		68083289DC52A3619282A9CB /* LotsawaCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LotsawaCore; path = ../LotsawaCore; sourceTree = SOURCE_ROOT; };
+		6EFAB5C9749E11C6B22D3CD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7A3B9E2D1C4F5068A9E7B3D2 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		761140E173F075F740589315 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC031ABE7D4368835D80D8B0 /* LotsawaKeyboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotsawaKeyboardApp.swift; sourceTree = "<group>"; };
+		BF29886607DDDAC08ED0B4C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDF6900434B40F3719A7A6D1 /* KeyboardExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = KeyboardExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7B36A78AA5C0BAB4E981056 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		E86524551140C83D4C4C2FF2 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C57F77CD30AF3098692D91D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C08E0F4B689C2D3E8CF990A /* LotsawaCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CB6009EDC024C2289B4D4E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B27EB1F9948BEE001217D25 /* LotsawaCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19AB5AC9FFF16B99A1AD50BA /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				68083289DC52A3619282A9CB /* LotsawaCore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		772A4B49943192505B9F1139 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDF6900434B40F3719A7A6D1 /* KeyboardExtension.appex */,
+				3153427D00996E498C6C528A /* LotsawaKeyboard.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0E872D33B491B4105ECAAFE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05F24FA343D342AB2C4AF25E /* KeyboardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F072DADD03D7E65422AA5D6B /* LotsawaKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BF29886607DDDAC08ED0B4C4 /* Assets.xcassets */,
+				6EFAB5C9749E11C6B22D3CD6 /* ContentView.swift */,
+				7A3B9E2D1C4F5068A9E7B3D2 /* GuideView.swift */,
+				761140E173F075F740589315 /* LaunchScreen.storyboard */,
+				60DADB4148ECFD3BA2DFA67D /* LotsawaKeyboard.entitlements */,
+				BC031ABE7D4368835D80D8B0 /* LotsawaKeyboardApp.swift */,
+				E7B36A78AA5C0BAB4E981056 /* PrivacyInfo.xcprivacy */,
+				E86524551140C83D4C4C2FF2 /* PrivacyPolicy.swift */,
+			);
+			path = LotsawaKeyboard;
+			sourceTree = "<group>";
+		};
+		F1F2F8980D4D2104F583A8CD = {
+			isa = PBXGroup;
+			children = (
+				FE2302260832E34C70652A08 /* KeyboardExtension */,
+				F072DADD03D7E65422AA5D6B /* LotsawaKeyboard */,
+				19AB5AC9FFF16B99A1AD50BA /* Packages */,
+				772A4B49943192505B9F1139 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE2302260832E34C70652A08 /* KeyboardExtension */ = {
+			isa = PBXGroup;
+			children = (
+				55923A6591EDED5B70648321 /* KeyboardExtension.entitlements */,
+				3D362274E1E3F01D6282BBC6 /* KeyboardViewController.swift */,
+				53982C7B2A69D12DD1A46684 /* PrivacyInfo.xcprivacy */,
+				A0E872D33B491B4105ECAAFE /* Views */,
+			);
+			path = KeyboardExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B30A64CF1D32A665A216AF9F /* KeyboardExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEE72312B6C373C3B94F23BC /* Build configuration list for PBXNativeTarget "KeyboardExtension" */;
+			buildPhases = (
+				A7C9EB196F48B8716123918A /* Sources */,
+				39CF8D97776F3BAAACECD592 /* Resources */,
+				5CB6009EDC024C2289B4D4E1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyboardExtension;
+			packageProductDependencies = (
+				A539CF594D7ED05A4C0E7132 /* LotsawaCore */,
+			);
+			productName = KeyboardExtension;
+			productReference = DDF6900434B40F3719A7A6D1 /* KeyboardExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D3DCF20C8C7CB32420CACB3A /* LotsawaKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BB948C80463867A8BAEEA6B /* Build configuration list for PBXNativeTarget "LotsawaKeyboard" */;
+			buildPhases = (
+				932C7984C0E945811F0556D5 /* Sources */,
+				D6FCE6657769F27B70E92E48 /* Resources */,
+				0C57F77CD30AF3098692D91D /* Frameworks */,
+				CD93B39466F486FF5E827584 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4713FCDAA13B8D4DFAD7A405 /* PBXTargetDependency */,
+			);
+			name = LotsawaKeyboard;
+			packageProductDependencies = (
+				520FAC1C0B92653AAC04409F /* LotsawaCore */,
+			);
+			productName = LotsawaKeyboard;
+			productReference = 3153427D00996E498C6C528A /* LotsawaKeyboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2EDA258BA25A133F372C6A27 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					B30A64CF1D32A665A216AF9F = {
+						DevelopmentTeam = GXMV9WJ359;
+						ProvisioningStyle = Automatic;
+					};
+					D3DCF20C8C7CB32420CACB3A = {
+						DevelopmentTeam = GXMV9WJ359;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EC14A6B07D5789BACBF7456F /* Build configuration list for PBXProject "LotsawaKeyboard" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F1F2F8980D4D2104F583A8CD;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				ABB776B5D8FCDFEFB2AC6762 /* XCLocalSwiftPackageReference "../LotsawaCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B30A64CF1D32A665A216AF9F /* KeyboardExtension */,
+				D3DCF20C8C7CB32420CACB3A /* LotsawaKeyboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39CF8D97776F3BAAACECD592 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70E6B7D3BC6685155BED6B9 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6FCE6657769F27B70E92E48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4385A3C8AD61F48BA295245 /* Assets.xcassets in Resources */,
+				FC74634BE37893E4D9F64E53 /* LaunchScreen.storyboard in Resources */,
+				61595500A603E3416CE0A288 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		932C7984C0E945811F0556D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F7C3BD36F0F33191BFEAF2B /* ContentView.swift in Sources */,
+				B8D2E4F6A1C3570E9D2B4A8F /* GuideView.swift in Sources */,
+				CA14FDB4BA25F21C23B98E75 /* LotsawaKeyboardApp.swift in Sources */,
+				9A14DAFBAF002F6E12C09583 /* PrivacyPolicy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7C9EB196F48B8716123918A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3FBB10B7C2E55F1E01E8305 /* KeyboardView.swift in Sources */,
+				EF543BD692ED703425C00D10 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4713FCDAA13B8D4DFAD7A405 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B30A64CF1D32A665A216AF9F /* KeyboardExtension */;
+			targetProxy = 254452DDAC9C01A2711DEADA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		21920A63D8156FD9D9F05577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
+				CODE_SIGN_IDENTITY = "631C3F82B4E02FB85FC0A96FABE2FC8DD7D23680";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GXMV9WJ359;
+				INFOPLIST_FILE = KeyboardExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lotsawa.keyboard.extension;
+				PROVISIONING_PROFILE_SPECIFIER = "Lotsawa Extension AppStore";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4352EDCC13AEEE5471194EEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LotsawaKeyboard/LotsawaKeyboard.entitlements;
+				CODE_SIGN_IDENTITY = "631C3F82B4E02FB85FC0A96FABE2FC8DD7D23680";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GXMV9WJ359;
+				INFOPLIST_FILE = LotsawaKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lotsawa.keyboard;
+				PROVISIONING_PROFILE_SPECIFIER = "Lotsawa Keyboard AppStore";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7E8C8565B1D1C6335279A3DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/KeyboardExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GXMV9WJ359;
+				INFOPLIST_FILE = KeyboardExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lotsawa.keyboard.extension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		867209A830F47950D0050B50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LotsawaKeyboard/LotsawaKeyboard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GXMV9WJ359;
+				INFOPLIST_FILE = LotsawaKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lotsawa.keyboard;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E907BA40622C45209216BC7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				MARKETING_VERSION = 2.2.0;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = GXMV9WJ359;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		F9B8559E160CB0D6AAF9F874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				MARKETING_VERSION = 2.2.0;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = GXMV9WJ359;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BB948C80463867A8BAEEA6B /* Build configuration list for PBXNativeTarget "LotsawaKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				867209A830F47950D0050B50 /* Debug */,
+				4352EDCC13AEEE5471194EEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BEE72312B6C373C3B94F23BC /* Build configuration list for PBXNativeTarget "KeyboardExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E8C8565B1D1C6335279A3DD /* Debug */,
+				21920A63D8156FD9D9F05577 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EC14A6B07D5789BACBF7456F /* Build configuration list for PBXProject "LotsawaKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E907BA40622C45209216BC7C /* Debug */,
+				F9B8559E160CB0D6AAF9F874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		ABB776B5D8FCDFEFB2AC6762 /* XCLocalSwiftPackageReference "../LotsawaCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../LotsawaCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		520FAC1C0B92653AAC04409F /* LotsawaCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LotsawaCore;
+		};
+		A539CF594D7ED05A4C0E7132 /* LotsawaCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LotsawaCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 2EDA258BA25A133F372C6A27 /* Project object */;
+}
